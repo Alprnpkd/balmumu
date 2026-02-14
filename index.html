@@ -159,7 +159,7 @@
 
                 <div class="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.4s">
                     <div class="text-center">
-                        <div class="font-display text-3xl md:text-4xl font-bold text-nature-600">200+</div>
+                        <div class="font-display text-3xl md:text-4xl font-bold text-nature-600">60+</div>
                         <div class="text-sm text-gray-500 mt-1 font-medium" data-tr="Katılımcı" data-en="Participants">Participants</div>
                     </div>
                     <div class="text-center border-x border-primary-200">
@@ -257,20 +257,34 @@
                 <p class="text-gray-600 max-w-2xl mx-auto" data-tr="Hazırlık, uygulama, değerlendirme ve yaygınlaştırma aşamalarıyla sürdürülebilir bir dönüşüm." data-en="Sustainable transformation through preparation, implementation, evaluation and dissemination phases.">Sustainable transformation through preparation, implementation, evaluation and dissemination phases.</p>
             </div>
 
-            <div class="relative">
+            <!-- Phase Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="filterPhase('all')" class="phase-btn active px-5 py-2.5 rounded-full font-semibold text-sm transition-all border-2 border-primary-300 bg-primary-500 text-white shadow-lg" data-tr="Tümü" data-en="All">All</button>
+                <button onclick="filterPhase('prep')" class="phase-btn px-5 py-2.5 rounded-full font-semibold text-sm transition-all border-2 border-primary-200 bg-white text-primary-700 hover:bg-primary-50" data-tr="Hazırlık (Ay 1-3)" data-en="Preparation (M 1-3)">Preparation (M 1-3)</button>
+                <button onclick="filterPhase('impl')" class="phase-btn px-5 py-2.5 rounded-full font-semibold text-sm transition-all border-2 border-nature-200 bg-white text-nature-700 hover:bg-nature-50" data-tr="Uygulama (Ay 4-9)" data-en="Implementation (M 4-9)">Implementation (M 4-9)</button>
+                <button onclick="filterPhase('eval')" class="phase-btn px-5 py-2.5 rounded-full font-semibold text-sm transition-all border-2 border-primary-200 bg-white text-primary-700 hover:bg-primary-50" data-tr="Değerlendirme (Ay 10-11)" data-en="Evaluation (M 10-11)">Evaluation (M 10-11)</button>
+                <button onclick="filterPhase('share')" class="phase-btn px-5 py-2.5 rounded-full font-semibold text-sm transition-all border-2 border-nature-200 bg-white text-nature-700 hover:bg-nature-50" data-tr="Yaygınlaştırma (Ay 12)" data-en="Dissemination (M 12)">Dissemination (M 12)</button>
+            </div>
+
+            <div class="relative" id="timelineContainer">
                 <div class="timeline-line"></div>
-                
-                <div class="relative mb-12 md:mb-0">
+
+                <!-- MONTH 1 — Kick-off & Planning -->
+                <div class="relative mb-12 md:mb-0 timeline-item" data-phase="prep">
                     <div class="md:flex items-center justify-between">
                         <div class="md:w-5/12 mb-4 md:mb-0 md:text-right">
                             <div class="bg-white p-6 rounded-2xl shadow-lg border border-primary-100 hover:shadow-xl transition-shadow">
-                                <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-bold mb-3" data-tr="Ay 1-3" data-en="Month 1-3">Month 1-3</span>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Hazırlık Aşaması" data-en="Preparation Phase">Preparation Phase</h3>
+                                <div class="flex items-center md:justify-end gap-2 mb-3">
+                                    <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-bold" data-tr="Ay 1" data-en="Month 1">Month 1</span>
+                                    <span class="inline-block px-2 py-0.5 bg-primary-50 text-primary-600 rounded-full text-xs font-semibold" data-tr="Hazırlık" data-en="Preparation">Preparation</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Kick-off Toplantısı ve Planlama" data-en="Kick-off Meeting & Planning">Kick-off Meeting & Planning</h3>
+                                <p class="text-gray-500 text-sm mb-3" data-tr="Tüm proje paydaşlarıyla proje vizyonunun paylaşılması ve sürecin başlatılması." data-en="Sharing the project vision with all stakeholders and initiating the process.">Sharing the project vision with all stakeholders and initiating the process.</p>
                                 <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Kick-off toplantısı ve görev dağılımı" data-en="Kick-off meeting and task distribution">Kick-off meeting and task distribution</span><i class="fas fa-users text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="İş birlikleri (arıcılar, geri dönüşüm tesisleri)" data-en="Partnerships (beekeepers, recycling facilities)">Partnerships (beekeepers, recycling facilities)</span><i class="fas fa-handshake text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Dijital içerik ve web sitesi kurulumu" data-en="Digital content and website setup">Digital content and website setup</span><i class="fas fa-globe text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Maliyet analizi ve lojistik planlama" data-en="Cost analysis and logistical planning">Cost analysis and logistical planning</span><i class="fas fa-calculator text-primary-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Paydaşlarla kick-off toplantısı" data-en="Kick-off meeting with stakeholders">Kick-off meeting with stakeholders</span><i class="fas fa-users text-primary-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="İletişim kanallarının kurulması" data-en="Establishing communication channels">Establishing communication channels</span><i class="fas fa-comments text-primary-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Doğa yürüyüşü ve kaynaşma etkinlikleri" data-en="Nature walks and social bonding events">Nature walks and social bonding events</span><i class="fas fa-hiking text-primary-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Görev dağılımı ve iş birlikçi araştırması" data-en="Task distribution and partner research">Task distribution and partner research</span><i class="fas fa-tasks text-primary-500"></i></li>
                                 </ul>
                             </div>
                         </div>
@@ -279,36 +293,268 @@
                     </div>
                 </div>
 
-                <div class="relative mb-12 md:mb-0 md:mt-12">
+                <!-- MONTH 2 — Digital Infrastructure & Supply -->
+                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="prep">
                     <div class="md:flex items-center justify-between">
                         <div class="md:w-5/12 hidden md:block"></div>
-                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-nature-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-cogs text-white text-xs"></i></div>
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-primary-400 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-globe text-white text-xs"></i></div>
                         <div class="md:w-5/12 md:pl-8">
-                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-nature-100 hover:shadow-xl transition-shadow ml-12 md:ml-0">
-                                <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold mb-3" data-tr="Ay 4-9" data-en="Month 4-9">Month 4-9</span>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Uygulama Aşaması" data-en="Implementation Phase">Implementation Phase</h3>
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-primary-100 hover:shadow-xl transition-shadow ml-12 md:ml-0">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-bold" data-tr="Ay 2" data-en="Month 2">Month 2</span>
+                                    <span class="inline-block px-2 py-0.5 bg-primary-50 text-primary-600 rounded-full text-xs font-semibold" data-tr="Hazırlık" data-en="Preparation">Preparation</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Dijital Altyapı ve Tedarik" data-en="Digital Infrastructure & Supply">Digital Infrastructure & Supply</h3>
+                                <p class="text-gray-500 text-sm mb-3" data-tr="Sosyal medya hesaplarının ve web sitesinin kurularak dijital varlığın oluşturulması." data-en="Creating digital presence by setting up social media accounts and the project website.">Creating digital presence by setting up social media accounts and the project website.</p>
                                 <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center gap-2"><i class="fas fa-store text-nature-500"></i><span data-tr="Stant kurma ve farkındalık etkinlikleri" data-en="Setting up stalls and awareness events">Setting up stalls and awareness events</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-chalkboard-teacher text-nature-500"></i><span data-tr="Arıcılık seminerleri" data-en="Beekeeping seminars">Beekeeping seminars</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-industry text-nature-500"></i><span data-tr="Geri dönüşüm tesisi gezileri" data-en="Recycling facility tours">Recycling facility tours</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-hands text-nature-500"></i><span data-tr="Balmumu yapım atölyeleri" data-en="Beeswax making workshops">Beeswax making workshops</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-hashtag text-primary-500"></i><span data-tr="Instagram, YouTube, TikTok hesap açılışı" data-en="Launching Instagram, YouTube, TikTok accounts">Launching Instagram, YouTube, TikTok accounts</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-film text-primary-500"></i><span data-tr="İçerik senaryoları ve challenge konularının belirlenmesi" data-en="Content scripts and challenge topic selection">Content scripts and challenge topic selection</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-laptop-code text-primary-500"></i><span data-tr="Web sitesi kurulumu ve eğitici içerik yükleme" data-en="Website setup and educational content upload">Website setup and educational content upload</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-university text-primary-500"></i><span data-tr="Üniversite toplulukları ile bağlantı kurma" data-en="Connecting with university communities">Connecting with university communities</span></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="relative mb-12 md:mb-0 md:mt-12">
+                <!-- MONTH 3 — Partnerships, Supply & Cost Analysis -->
+                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="prep">
                     <div class="md:flex items-center justify-between">
                         <div class="md:w-5/12 mb-4 md:mb-0 md:text-right">
                             <div class="bg-white p-6 rounded-2xl shadow-lg border border-primary-100 hover:shadow-xl transition-shadow">
-                                <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-bold mb-3" data-tr="Ay 10-11" data-en="Month 10-11">Month 10-11</span>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Değerlendirme" data-en="Evaluation">Evaluation</h3>
+                                <div class="flex items-center md:justify-end gap-2 mb-3">
+                                    <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-bold" data-tr="Ay 3" data-en="Month 3">Month 3</span>
+                                    <span class="inline-block px-2 py-0.5 bg-primary-50 text-primary-600 rounded-full text-xs font-semibold" data-tr="Hazırlık" data-en="Preparation">Preparation</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="İş Birlikleri, Tedarik ve Maliyet Analizi" data-en="Partnerships, Supply & Cost Analysis">Partnerships, Supply & Cost Analysis</h3>
+                                <p class="text-gray-500 text-sm mb-3" data-tr="Yerel arıcılarla iş birliği ve atölye malzemelerinin tedarik planlaması." data-en="Partnership with local beekeepers and supply planning for workshop materials.">Partnership with local beekeepers and supply planning for workshop materials.</p>
                                 <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Katılımcı plastik kullanım analizi" data-en="Participant plastic usage analysis">Participant plastic usage analysis</span><i class="fas fa-chart-line text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Geri bildirim toplama ve anketler" data-en="Collecting feedback and surveys">Collecting feedback and surveys</span><i class="fas fa-comments text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Agile süreç optimizasyonu" data-en="Agile process optimization">Agile process optimization</span><i class="fas fa-sync-alt text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="%40 azalma hedefi takibi" data-en="40% reduction goal tracking">40% reduction goal tracking</span><i class="fas fa-bullseye text-primary-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Yerel arıcılarla iş birliği toplantıları" data-en="Partnership meetings with local beekeepers">Partnership meetings with local beekeepers</span><i class="fas fa-handshake text-primary-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Atölye malzeme bilgisi ve tedarik iş birlikleri" data-en="Workshop material info and supply partnerships">Workshop material info and supply partnerships</span><i class="fas fa-boxes text-primary-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Tesis ve fabrika gezi planlarının netleştirilmesi" data-en="Finalizing facility and factory tour plans">Finalizing facility and factory tour plans</span><i class="fas fa-route text-primary-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Pamuklu kumaş, reçine, doğal yağ maliyet analizi" data-en="Cost analysis: cotton fabric, resin, natural oils">Cost analysis: cotton fabric, resin, natural oils</span><i class="fas fa-calculator text-primary-500"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-primary-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-clipboard-check text-white text-xs"></i></div>
+                        <div class="md:w-5/12 md:pl-8 hidden md:block"></div>
+                    </div>
+                </div>
+
+                <!-- Phase Divider: Implementation -->
+                <div class="relative my-8 md:my-16 flex justify-center z-10">
+                    <div class="bg-gradient-to-r from-nature-500 to-nature-600 text-white px-8 py-3 rounded-full font-bold shadow-xl flex items-center gap-3">
+                        <i class="fas fa-play-circle"></i>
+                        <span data-tr="UYGULAMA AŞAMASI BAŞLANGIÇ" data-en="IMPLEMENTATION PHASE START">IMPLEMENTATION PHASE START</span>
+                    </div>
+                </div>
+
+                <!-- MONTH 4 — Field Promotion & Participant Selection -->
+                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="impl">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 hidden md:block"></div>
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-nature-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-store text-white text-xs"></i></div>
+                        <div class="md:w-5/12 md:pl-8">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-nature-100 hover:shadow-xl transition-shadow ml-12 md:ml-0">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold" data-tr="Ay 4" data-en="Month 4">Month 4</span>
+                                    <span class="inline-block px-2 py-0.5 bg-nature-50 text-nature-600 rounded-full text-xs font-semibold" data-tr="Uygulama" data-en="Implementation">Implementation</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Saha Tanıtımı ve Katılımcı Seçimi" data-en="Field Promotion & Participant Selection">Field Promotion & Participant Selection</h3>
+                                <p class="text-gray-500 text-sm mb-3" data-tr="Üniversite ve yerel lokasyonlarda tanıtım stantları ile hedef kitleye ulaşma." data-en="Reaching the target audience through promotional stalls at the university and local locations.">Reaching the target audience through promotional stalls at the university and local locations.</p>
+                                <ul class="space-y-2 text-gray-600 text-sm">
+                                    <li class="flex items-center gap-2"><i class="fas fa-bullhorn text-nature-500"></i><span data-tr="Gaziantep Üniversitesi'nde tanıtım stantları" data-en="Promotional stalls at Gaziantep University">Promotional stalls at Gaziantep University</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-seedling text-nature-500"></i><span data-tr="Plastik zararları ve sürdürülebilir alternatif farkındalığı" data-en="Plastic harm awareness and sustainable alternatives">Plastic harm awareness and sustainable alternatives</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-user-plus text-nature-500"></i><span data-tr="18-30 yaş arası 100 kişilik hedef grup kaydı" data-en="Registration of 100-person target group (ages 18-30)">Registration of 100-person target group (ages 18-30)</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MONTH 5 — Beekeeping Seminar -->
+                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="impl">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 mb-4 md:mb-0 md:text-right">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-nature-100 hover:shadow-xl transition-shadow">
+                                <div class="flex items-center md:justify-end gap-2 mb-3">
+                                    <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold" data-tr="Ay 5" data-en="Month 5">Month 5</span>
+                                    <span class="inline-block px-2 py-0.5 bg-nature-50 text-nature-600 rounded-full text-xs font-semibold" data-tr="Uygulama" data-en="Implementation">Implementation</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Arıcılık Semineri" data-en="Beekeeping Seminar">Beekeeping Seminar</h3>
+                                <p class="text-gray-500 text-sm mb-3" data-tr="Profesyonel arıcı ile arıların ekosistem üzerindeki kritik önemini keşfetme." data-en="Discovering the critical importance of bees to the ecosystem with a professional beekeeper.">Discovering the critical importance of bees to the ecosystem with a professional beekeeper.</p>
+                                <ul class="space-y-2 text-gray-600 text-sm">
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Arıların ekosistem için önemi ve biyolojik çeşitlilik" data-en="Importance of bees for ecosystem and biodiversity">Importance of bees for ecosystem and biodiversity</span><i class="fas fa-bee text-nature-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Profesyonel arıcı tarafından teorik seminer" data-en="Theoretical seminar by professional beekeeper">Theoretical seminar by professional beekeeper</span><i class="fas fa-chalkboard-teacher text-nature-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="İnteraktif etkinlik ve seminer analizi" data-en="Interactive activity and seminar analysis">Interactive activity and seminar analysis</span><i class="fas fa-people-arrows text-nature-500"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-nature-600 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-bee text-white text-xs"></i></div>
+                        <div class="md:w-5/12 md:pl-8 hidden md:block"></div>
+                    </div>
+                </div>
+
+                <!-- Show More Button -->
+                <div class="relative my-10 flex justify-center z-10" id="showMoreBtnWrapper">
+                    <button onclick="toggleRemainingMonths()" id="showMoreBtn" class="group flex items-center gap-3 px-8 py-4 bg-white border-2 border-dashed border-primary-300 rounded-2xl font-bold text-primary-700 hover:bg-primary-50 hover:border-primary-500 transition-all shadow-md hover:shadow-lg">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 group-hover:bg-primary-200 transition-colors">
+                            <i class="fas fa-chevron-down text-primary-600 transition-transform" id="showMoreIcon"></i>
+                        </span>
+                        <span>
+                            <span class="block text-base" data-tr="Devamını Gör" data-en="Show More" id="showMoreText">Show More</span>
+                            <span class="block text-xs font-normal text-gray-400" data-tr="Ay 6 – 12 arası planı görüntüle" data-en="View months 6 – 12" id="showMoreSub">View months 6 – 12</span>
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Hidden remaining months -->
+                <div id="remainingMonths" class="hidden">
+
+                <!-- MONTH 6 — Visual Learning & Facility Tours -->
+                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="impl">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 hidden md:block"></div>
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-nature-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-bus text-white text-xs"></i></div>
+                        <div class="md:w-5/12 md:pl-8">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-nature-100 hover:shadow-xl transition-shadow ml-12 md:ml-0">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold" data-tr="Ay 6" data-en="Month 6">Month 6</span>
+                                    <span class="inline-block px-2 py-0.5 bg-nature-50 text-nature-600 rounded-full text-xs font-semibold" data-tr="Uygulama" data-en="Implementation">Implementation</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Görsel Öğrenme ve Tesis Gezileri" data-en="Visual Learning & Facility Tours">Visual Learning & Facility Tours</h3>
+                                <p class="text-gray-500 text-sm mb-3" data-tr="Geri dönüşüm tesisi ve fabrika gezileri ile 'atık oluşmadan önleme' vizyonunun aktarılması." data-en="Conveying the 'prevention before waste' vision through recycling facility and factory tours.">Conveying the 'prevention before waste' vision through recycling facility and factory tours.</p>
+                                <ul class="space-y-2 text-gray-600 text-sm">
+                                    <li class="flex items-center gap-2"><i class="fas fa-industry text-nature-500"></i><span data-tr="Geri dönüşüm tesisine gezi ve saha görevli sunumu" data-en="Recycling facility tour with field staff presentation">Recycling facility tour with field staff presentation</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-clipboard-list text-nature-500"></i><span data-tr="Atık dönüşüm formu ve plastik geri dönüşüm zorluğu" data-en="Waste conversion forms and plastic recycling challenges">Waste conversion forms and plastic recycling challenges</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-camera text-nature-500"></i><span data-tr="Fotoğraf/video ile içerik üretimi" data-en="Photo/video content creation during tours">Photo/video content creation during tours</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-building text-nature-500"></i><span data-tr="Arıcılık ürünleri fabrika gezileri" data-en="Beekeeping products factory tours">Beekeeping products factory tours</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MONTH 7 — Beeswax & Beeswax Wrap Workshops -->
+                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="impl">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 mb-4 md:mb-0 md:text-right">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-nature-100 hover:shadow-xl transition-shadow relative">
+                                <div class="absolute -top-3 -right-3 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md" data-tr="2 Atölye" data-en="2 Workshops">2 Workshops</div>
+                                <div class="flex items-center md:justify-end gap-2 mb-3">
+                                    <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold" data-tr="Ay 7" data-en="Month 7">Month 7</span>
+                                    <span class="inline-block px-2 py-0.5 bg-nature-50 text-nature-600 rounded-full text-xs font-semibold" data-tr="Uygulama" data-en="Implementation">Implementation</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Balmumu ve Balmumu Kumaş Atölyeleri" data-en="Beeswax & Beeswax Wrap Workshops">Beeswax & Beeswax Wrap Workshops</h3>
+                                <p class="text-gray-500 text-sm mb-3" data-tr="Atık peteklerden balmumu elde etme ve balmumu kumaş üretimi ile plastiksiz mutfak hedefi." data-en="Plastic-free kitchen goal through extracting beeswax from waste combs and producing beeswax wraps.">Plastic-free kitchen goal through extracting beeswax from waste combs and producing beeswax wraps.</p>
+                                <ul class="space-y-2 text-gray-600 text-sm">
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Atık peteklerden balmumu elde etme atölyesi" data-en="Workshop: extracting beeswax from waste combs">Workshop: extracting beeswax from waste combs</span><i class="fas fa-fire text-nature-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Fırınlama/ütüleme/daldırma teknikleriyle kumaş üretimi" data-en="Wrap production: baking, ironing, or dipping techniques">Wrap production: baking, ironing, or dipping techniques</span><i class="fas fa-layer-group text-nature-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Balmumu kumaş faydaları ve kullanım bilgilendirmesi" data-en="Beeswax wrap benefits and usage guidelines">Beeswax wrap benefits and usage guidelines</span><i class="fas fa-info-circle text-nature-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="'Plastiksiz Mutfak' challenge başlatılması" data-en="Launching 'Plastic-Free Kitchen' challenge">"Plastic-Free Kitchen" challenge launch</span><i class="fas fa-hashtag text-nature-500"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-nature-600 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-hands text-white text-xs"></i></div>
+                        <div class="md:w-5/12 md:pl-8 hidden md:block"></div>
+                    </div>
+                </div>
+
+                <!-- MONTH 8 — Propolis Extraction -->
+                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="impl">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 hidden md:block"></div>
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-nature-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-jar text-white text-xs"></i></div>
+                        <div class="md:w-5/12 md:pl-8">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-nature-100 hover:shadow-xl transition-shadow ml-12 md:ml-0">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold" data-tr="Ay 8" data-en="Month 8">Month 8</span>
+                                    <span class="inline-block px-2 py-0.5 bg-nature-50 text-nature-600 rounded-full text-xs font-semibold" data-tr="Uygulama" data-en="Implementation">Implementation</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Propolis Özütleme Atölyesi" data-en="Propolis Extraction Workshop">Propolis Extraction Workshop</h3>
+                                <p class="text-gray-500 text-sm mb-3" data-tr="Propolisin zeytinyağı ve alkol ile özütleme tekniklerinin uygulamalı öğretimi." data-en="Hands-on teaching of propolis extraction techniques using olive oil and alcohol.">Hands-on teaching of propolis extraction techniques using olive oil and alcohol.</p>
+                                <ul class="space-y-2 text-gray-600 text-sm">
+                                    <li class="flex items-center gap-2"><i class="fas fa-flask text-nature-500"></i><span data-tr="Zeytinyağı ve alkol ile özütleme uygulaması" data-en="Extraction practice with olive oil and alcohol">Extraction practice with olive oil and alcohol</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-user-md text-nature-500"></i><span data-tr="Uzmanlar tarafından propolis faydaları bilgilendirmesi" data-en="Expert briefing on propolis benefits">Expert briefing on propolis benefits</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-eye text-nature-500"></i><span data-tr="Arıcı eşliğinde gözlemsel katılımcı deneyimi" data-en="Observational participant experience with beekeeper">Observational participant experience with beekeeper</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MONTH 9 — Bee Venom & Royal Jelly Workshop -->
+                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="impl">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 mb-4 md:mb-0 md:text-right">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-nature-100 hover:shadow-xl transition-shadow">
+                                <div class="flex items-center md:justify-end gap-2 mb-3">
+                                    <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold" data-tr="Ay 9" data-en="Month 9">Month 9</span>
+                                    <span class="inline-block px-2 py-0.5 bg-nature-50 text-nature-600 rounded-full text-xs font-semibold" data-tr="Uygulama" data-en="Implementation">Implementation</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Arı Zehri ve Arı Sütü Atölyesi" data-en="Bee Venom & Royal Jelly Workshop">Bee Venom & Royal Jelly Workshop</h3>
+                                <p class="text-gray-500 text-sm mb-3" data-tr="Arı sütü hasadı ve arı zehrinin sağlık/kozmetik alanındaki potansiyelinin keşfi." data-en="Discovering royal jelly harvesting and the health/cosmetic potential of bee venom.">Discovering royal jelly harvesting and the health/cosmetic potential of bee venom.</p>
+                                <ul class="space-y-2 text-gray-600 text-sm">
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Kraliçe hücrelerinden arı sütü hasat süreci" data-en="Royal jelly harvesting from queen cells">Royal jelly harvesting from queen cells</span><i class="fas fa-crown text-nature-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Vakum cihazları ile toplama tekniği gösterimi" data-en="Demo of collection with vacuum devices">Demo of collection with vacuum devices</span><i class="fas fa-syringe text-nature-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Sağlık ve kozmetik alanında faydalar bilgilendirmesi" data-en="Health and cosmetic benefits briefing">Health and cosmetic benefits briefing</span><i class="fas fa-heartbeat text-nature-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Ekonomik değer üretme potansiyeli sunumu" data-en="Economic value creation potential presentation">Economic value creation potential presentation</span><i class="fas fa-chart-line text-nature-500"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-nature-600 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-vial text-white text-xs"></i></div>
+                        <div class="md:w-5/12 md:pl-8 hidden md:block"></div>
+                    </div>
+                </div>
+
+                <!-- Phase Divider: Evaluation -->
+                <div class="relative my-8 md:my-16 flex justify-center z-10">
+                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-3 rounded-full font-bold shadow-xl flex items-center gap-3">
+                        <i class="fas fa-chart-bar"></i>
+                        <span data-tr="DEĞERLENDİRME AŞAMASI" data-en="EVALUATION PHASE">EVALUATION PHASE</span>
+                    </div>
+                </div>
+
+                <!-- MONTH 10 — Monitoring & Data Collection -->
+                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="eval">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 hidden md:block"></div>
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-primary-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-database text-white text-xs"></i></div>
+                        <div class="md:w-5/12 md:pl-8">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-primary-100 hover:shadow-xl transition-shadow ml-12 md:ml-0">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-bold" data-tr="Ay 10" data-en="Month 10">Month 10</span>
+                                    <span class="inline-block px-2 py-0.5 bg-primary-50 text-primary-600 rounded-full text-xs font-semibold" data-tr="Değerlendirme" data-en="Evaluation">Evaluation</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="İzleme ve Veri Toplama" data-en="Monitoring & Data Collection">Monitoring & Data Collection</h3>
+                                <p class="text-gray-500 text-sm mb-3" data-tr="Agile yönetim yaklaşımı ile %40 plastik azaltma hedefinin veri bazlı analizi." data-en="Data-driven analysis of the 40% plastic reduction target using Agile management approach.">Data-driven analysis of the 40% plastic reduction target using Agile management approach.</p>
+                                <ul class="space-y-2 text-gray-600 text-sm">
+                                    <li class="flex items-center gap-2"><i class="fas fa-chart-line text-primary-500"></i><span data-tr="Plastik poşet/streç film kullanımı proje öncesi-sonrası karşılaştırma" data-en="Pre vs. post comparison of plastic bag/cling film usage">Pre vs. post comparison of plastic bag/cling film usage</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-globe text-primary-500"></i><span data-tr="Web sitesi erişim ve sosyal medya etkileşim oranları" data-en="Website access and social media engagement rates">Website access and social media engagement rates</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-hashtag text-primary-500"></i><span data-tr="Challenge geri dönüşleri ile etki ölçümü" data-en="Impact measurement via challenge feedback">Impact measurement via challenge feedback</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-file-alt text-primary-500"></i><span data-tr="Yaygınlaştırma verilerinin raporlanması" data-en="Reporting dissemination data">Reporting dissemination data</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MONTH 11 — Evaluation & Process Improvement -->
+                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="eval">
+                    <div class="md:flex items-center justify-between">
+                        <div class="md:w-5/12 mb-4 md:mb-0 md:text-right">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-primary-100 hover:shadow-xl transition-shadow">
+                                <div class="flex items-center md:justify-end gap-2 mb-3">
+                                    <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-bold" data-tr="Ay 11" data-en="Month 11">Month 11</span>
+                                    <span class="inline-block px-2 py-0.5 bg-primary-50 text-primary-600 rounded-full text-xs font-semibold" data-tr="Değerlendirme" data-en="Evaluation">Evaluation</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Değerlendirme ve Süreç İyileştirme" data-en="Evaluation & Process Improvement">Evaluation & Process Improvement</h3>
+                                <p class="text-gray-500 text-sm mb-3" data-tr="Tüm faaliyetlerin etkililik, verimlilik ve sürdürülebilirlik açısından kapsamlı değerlendirmesi." data-en="Comprehensive evaluation of all activities in terms of effectiveness, efficiency and sustainability.">Comprehensive evaluation of all activities in terms of effectiveness, efficiency and sustainability.</p>
+                                <ul class="space-y-2 text-gray-600 text-sm">
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Ölçme-değerlendirme testleri ve formları analizi" data-en="Assessment tests and evaluation forms analysis">Assessment tests and evaluation forms analysis</span><i class="fas fa-clipboard-check text-primary-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Bireysel geri dönüşler ve davranış değişimi analizi" data-en="Individual feedback and behavior change analysis">Individual feedback and behavior change analysis</span><i class="fas fa-user-check text-primary-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Agile geri bildirim döngüleri ile süreç optimizasyonu" data-en="Process optimization via Agile feedback loops">Process optimization via Agile feedback loops</span><i class="fas fa-sync-alt text-primary-500"></i></li>
+                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Yazılı iç rapor ve hesap verebilirlik belgesi" data-en="Written internal report and accountability document">Written internal report and accountability document</span><i class="fas fa-book text-primary-500"></i></li>
                                 </ul>
                             </div>
                         </div>
@@ -317,24 +563,39 @@
                     </div>
                 </div>
 
-                <div class="relative md:mt-12">
+                <!-- Phase Divider: Dissemination -->
+                <div class="relative my-8 md:my-16 flex justify-center z-10">
+                    <div class="bg-gradient-to-r from-nature-600 to-primary-500 text-white px-8 py-3 rounded-full font-bold shadow-xl flex items-center gap-3">
+                        <i class="fas fa-trophy"></i>
+                        <span data-tr="YAYGINLAŞTIRMA VE KAPANIŞ" data-en="DISSEMINATION & CLOSING">DISSEMINATION & CLOSING</span>
+                    </div>
+                </div>
+
+                <!-- MONTH 12 — Dissemination, Certification & Closing -->
+                <div class="relative md:mt-12 timeline-item" data-phase="share">
                     <div class="md:flex items-center justify-between">
                         <div class="md:w-5/12 hidden md:block"></div>
-                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-nature-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-trophy text-white text-xs"></i></div>
+                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-gradient-to-r from-nature-500 to-primary-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-flag-checkered text-white text-xs"></i></div>
                         <div class="md:w-5/12 md:pl-8">
-                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-nature-100 hover:shadow-xl transition-shadow ml-12 md:ml-0">
-                                <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold mb-3" data-tr="Ay 12" data-en="Month 12">Month 12</span>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Sonuçların Paylaşımı" data-en="Sharing Results">Sharing Results</h3>
+                            <div class="bg-gradient-to-br from-white to-nature-50 p-6 rounded-2xl shadow-lg border border-nature-200 hover:shadow-xl transition-shadow ml-12 md:ml-0">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold" data-tr="Ay 12" data-en="Month 12">Month 12</span>
+                                    <span class="inline-block px-2 py-0.5 bg-primary-50 text-primary-600 rounded-full text-xs font-semibold" data-tr="Yaygınlaştırma" data-en="Dissemination">Dissemination</span>
+                                </div>
+                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Yaygınlaştırma, Sertifikalandırma ve Kapanış" data-en="Dissemination, Certification & Closing">Dissemination, Certification & Closing</h3>
+                                <p class="text-gray-500 text-sm mb-3" data-tr="Proje çıktılarının paylaşılması, dijital toolkit yayını ve Youthpass sertifikalandırması." data-en="Sharing project outcomes, publishing digital toolkit and Youthpass certification.">Sharing project outcomes, publishing digital toolkit and Youthpass certification.</p>
                                 <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center gap-2"><i class="fas fa-file-alt text-nature-500"></i><span data-tr="Etki analizi ve raporlama" data-en="Impact analysis and reporting">Impact analysis and reporting</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-laptop text-nature-500"></i><span data-tr="Digital Toolkit yayınlama" data-en="Publishing Digital Toolkit">Publishing Digital Toolkit</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-award text-nature-500"></i><span data-tr="Youthpass sertifikalandırma" data-en="Youthpass certification">Youthpass certification</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-flag-checkered text-nature-500"></i><span data-tr="Kapanış semineri" data-en="Closing seminar">Closing seminar</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-file-alt text-nature-500"></i><span data-tr="Genel proje raporu oluşturma" data-en="Creating comprehensive project report">Creating comprehensive project report</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-laptop text-nature-500"></i><span data-tr="Digital Toolkit açık erişim olarak yayınlama" data-en="Publishing Digital Toolkit as open access">Publishing Digital Toolkit as open access</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-microphone-alt text-nature-500"></i><span data-tr="Kapanış ve yaygınlaştırma semineri düzenleme" data-en="Organizing closing and dissemination seminar">Organizing closing and dissemination seminar</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-award text-nature-500"></i><span data-tr="Youthpass sertifikaları ile bireysel gelişim belgeleme" data-en="Youthpass certificates for individual development documentation">Youthpass certificates for individual development</span></li>
+                                    <li class="flex items-center gap-2"><i class="fas fa-share-alt text-nature-500"></i><span data-tr="İyi uygulama örnekleri ve katılımcı deneyimlerinin paylaşımı" data-en="Sharing best practices and participant experiences">Sharing best practices and participant experiences</span></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
+                </div><!-- end remainingMonths -->
             </div>
         </div>
     </section>
@@ -465,7 +726,7 @@
                             <div class="text-sm text-nature-200 mt-2" data-tr="Katılımcıların mutfaklarında" data-en="In participants' kitchens">In participants' kitchens</div>
                         </div>
                         <div class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                            <div class="font-display text-5xl font-bold mb-2 counter" data-target="200">0</div>
+                            <div class="font-display text-5xl font-bold mb-2 counter" data-target="60">0</div>
                             <div class="text-nature-100 font-semibold mb-1">+</div>
                             <div class="text-white font-medium" data-tr="Doğrudan Katılımcı" data-en="Direct Participants">Direct Participants</div>
                             <div class="text-sm text-nature-200 mt-2" data-tr="18-30 yaş arası gençler" data-en="Youth aged 18-30">Youth aged 18-30</div>
@@ -484,7 +745,7 @@
                                 <span data-tr="Kısa Vadeli Hedefler" data-en="Short Term Goals">Short Term Goals</span>
                             </h3>
                             <ul class="space-y-2 text-nature-100">
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-primary-400 mt-1"></i><span data-tr="200 kişiye uygulamalı atölye eğitimi" data-en="Hands-on workshop training for 200 people">Hands-on workshop training for 200 people</span></li>
+                                <li class="flex items-start gap-2"><i class="fas fa-check text-primary-400 mt-1"></i><span data-tr="60 kişiye uygulamalı atölye eğitimi" data-en="Hands-on workshop training for 60 people">Hands-on workshop training for 60 people</span></li>
                                 <li class="flex items-start gap-2"><i class="fas fa-check text-primary-400 mt-1"></i><span data-tr="Yerel arıcılarla iş birliği ağının kurulması" data-en="Establishing a cooperation network with local beekeepers">Establishing a cooperation network with local beekeepers</span></li>
                                 <li class="flex items-start gap-2"><i class="fas fa-check text-primary-400 mt-1"></i><span data-tr="Sıfır Atık farkındalığının artırılması" data-en="Raising Zero Waste awareness">Raising Zero Waste awareness</span></li>
                             </ul>
@@ -694,11 +955,12 @@
 
     <script>
         // Language Management - DEFAULT LANGUAGE SET TO ENGLISH
-        let currentLang = localStorage.getItem('language') || 'en';
+        let currentLang = 'en';
+        try { currentLang = localStorage.getItem('language') || 'en'; } catch(e) {}
         
         function toggleLanguage() {
             currentLang = currentLang === 'tr' ? 'en' : 'tr';
-            localStorage.setItem('language', currentLang);
+            try { localStorage.setItem('language', currentLang); } catch(e) {}
             applyLanguage();
             updateActiveButton();
         }
@@ -860,12 +1122,122 @@
             });
         });
 
-        window.addEventListener('load', () => {
-            window.dispatchEvent(new Event('scroll'));
+        // Roadmap Show More / Collapse
+        function toggleRemainingMonths() {
+            const container = document.getElementById('remainingMonths');
+            const icon = document.getElementById('showMoreIcon');
+            const text = document.getElementById('showMoreText');
+            const sub = document.getElementById('showMoreSub');
+            const isHidden = container.classList.contains('hidden');
+
+            if (isHidden) {
+                container.classList.remove('hidden');
+                container.style.opacity = '0';
+                container.style.maxHeight = '0';
+                container.style.overflow = 'hidden';
+                container.style.transition = 'opacity 0.5s ease, max-height 0.6s ease';
+                requestAnimationFrame(() => {
+                    container.style.opacity = '1';
+                    container.style.maxHeight = container.scrollHeight + 'px';
+                });
+                setTimeout(() => { container.style.maxHeight = 'none'; container.style.overflow = ''; }, 700);
+                icon.style.transform = 'rotate(180deg)';
+                text.textContent = currentLang === 'tr' ? 'Gizle' : 'Show Less';
+                sub.textContent = currentLang === 'tr' ? 'Ay 6 – 12 planını gizle' : 'Hide months 6 – 12';
+            } else {
+                container.style.maxHeight = container.scrollHeight + 'px';
+                container.style.overflow = 'hidden';
+                container.style.transition = 'opacity 0.4s ease, max-height 0.5s ease';
+                requestAnimationFrame(() => {
+                    container.style.opacity = '0';
+                    container.style.maxHeight = '0';
+                });
+                setTimeout(() => { container.classList.add('hidden'); container.style.overflow = ''; }, 500);
+                icon.style.transform = 'rotate(0deg)';
+                text.textContent = currentLang === 'tr' ? 'Devamını Gör' : 'Show More';
+                sub.textContent = currentLang === 'tr' ? 'Ay 6 – 12 arası planı görüntüle' : 'View months 6 – 12';
+                // Scroll back to button
+                document.getElementById('showMoreBtnWrapper').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Roadmap Phase Filter
+        function filterPhase(phase) {
+            const items = document.querySelectorAll('.timeline-item');
+            const phaseDividers = document.querySelectorAll('#timelineContainer > .relative.my-8, #remainingMonths > .relative.my-8');
+            const remaining = document.getElementById('remainingMonths');
+            const btnWrapper = document.getElementById('showMoreBtnWrapper');
+            const icon = document.getElementById('showMoreIcon');
+            const text = document.getElementById('showMoreText');
+            const sub = document.getElementById('showMoreSub');
+
+            // If filtering a specific phase, show all months (expand hidden)
+            if (phase !== 'all') {
+                remaining.classList.remove('hidden');
+                remaining.style.opacity = '1';
+                remaining.style.maxHeight = 'none';
+                remaining.style.overflow = '';
+                btnWrapper.style.display = 'none';
+            } else {
+                // On "All", collapse back and show button
+                remaining.classList.add('hidden');
+                remaining.style.opacity = '';
+                remaining.style.maxHeight = '';
+                btnWrapper.style.display = '';
+                icon.style.transform = 'rotate(0deg)';
+                text.textContent = currentLang === 'tr' ? 'Devamını Gör' : 'Show More';
+                sub.textContent = currentLang === 'tr' ? 'Ay 6 – 12 arası planı görüntüle' : 'View months 6 – 12';
+            }
+            
+            items.forEach(item => {
+                if (phase === 'all' || item.getAttribute('data-phase') === phase) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            phaseDividers.forEach(d => {
+                d.style.display = phase === 'all' ? '' : 'none';
+            });
+
+            document.querySelectorAll('.phase-btn').forEach(btn => {
+                btn.classList.remove('bg-primary-500', 'bg-nature-500', 'text-white', 'shadow-lg');
+                btn.classList.add('bg-white');
+                const hasTr = btn.getAttribute('data-tr') || '';
+                if (hasTr.includes('Uygulama') || hasTr.includes('Yaygınlaştırma')) {
+                    btn.classList.add('text-nature-700');
+                } else {
+                    btn.classList.add('text-primary-700');
+                }
+            });
+        }
+
+        document.querySelectorAll('.phase-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.phase-btn').forEach(b => {
+                    b.classList.remove('bg-primary-500', 'bg-nature-500', 'text-white', 'shadow-lg');
+                    b.classList.add('bg-white');
+                });
+                this.classList.add('shadow-lg');
+                const txt = this.textContent.trim();
+                if (txt.includes('Implementation') || txt.includes('Uygulama') || txt.includes('Dissemination') || txt.includes('Yaygınlaştırma')) {
+                    this.classList.add('bg-nature-500', 'text-white');
+                    this.classList.remove('bg-white', 'text-nature-700');
+                } else {
+                    this.classList.add('bg-primary-500', 'text-white');
+                    this.classList.remove('bg-white', 'text-primary-700');
+                }
+            });
         });
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
+        window.addEventListener('DOMContentLoaded', () => {
+            // Ensure first phase button is styled as active
+            const firstBtn = document.querySelector('.phase-btn');
+            if (firstBtn) {
+                firstBtn.classList.add('bg-primary-500', 'text-white', 'shadow-lg');
+                firstBtn.classList.remove('bg-white', 'text-primary-700');
+            }
         });
     </script>
 </body>
