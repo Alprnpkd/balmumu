@@ -1,1244 +1,794 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bee The Change, Seal The Future | ESC30</title>
-    <meta name="description" content="Sustainable living and beeswax workshops in Gaziantep. 40% plastic reduction goal. ESC30 Solidarity Project.">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: { 50: '#FEF3C7', 100: '#FDE68A', 200: '#FCD34D', 300: '#FBBF24', 400: '#F59E0B', 500: '#D97706', 600: '#B45309', 700: '#92400E', 800: '#78350F', 900: '#451A03' },
-                        nature: { 50: '#ECFDF5', 100: '#D1FAE5', 200: '#A7F3D0', 300: '#6EE7B7', 400: '#34D399', 500: '#10B981', 600: '#059669', 700: '#047857', 800: '#065F46', 900: '#064E3B' },
-                        cream: '#FFFBF0', dark: '#1F2937',
-                    },
-                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Playfair Display', 'serif'] },
-                    animation: { 'float': 'float 6s ease-in-out infinite', 'float-delayed': 'float 6s ease-in-out 3s infinite', 'buzz': 'buzz 0.3s linear infinite', 'fade-in-up': 'fadeInUp 0.8s ease-out forwards' },
-                    keyframes: { float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } }, buzz: { '0%, 100%': { transform: 'translateX(0)' }, '25%': { transform: 'translateX(-2px) rotate(-1deg)' }, '75%': { transform: 'translateX(2px) rotate(1deg)' } }, fadeInUp: { '0%': { opacity: '0', transform: 'translateY(30px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } } }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        .honeycomb-bg { background-color: #FFFBF0; background-image: radial-gradient(circle at 50% 50%, rgba(251, 191, 36, 0.05) 0%, transparent 50%), linear-gradient(60deg, rgba(251, 191, 36, 0.03) 25%, transparent 25%, transparent 75%, rgba(251, 191, 36, 0.03) 75%, rgba(251, 191, 36, 0.03)), linear-gradient(-60deg, rgba(251, 191, 36, 0.03) 25%, transparent 25%, transparent 75%, rgba(251, 191, 36, 0.03) 75%, rgba(251, 191, 36, 0.03)); background-size: 100% 100%, 40px 70px, 40px 70px; }
-        .hexagon { clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); transition: all 0.3s ease; }
-        .hexagon:hover { transform: translateY(-5px) scale(1.05); }
-        .progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, #F59E0B, #10B981); z-index: 100; transition: width 0.1s; }
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #FEF3C7; }
-        ::-webkit-scrollbar-thumb { background: #D97706; border-radius: 5px; }
-        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
-        .section-hidden { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .section-visible { opacity: 1; transform: translateY(0); }
-        .timeline-line { position: absolute; left: 50%; transform: translateX(-50%); width: 4px; height: 100%; background: linear-gradient(to bottom, #F59E0B, #10B981); border-radius: 2px; }
-        @media (max-width: 768px) { .timeline-line { left: 20px; } }
-        
-        /* Language Switcher Styles */
-        .lang-switcher { position: relative; display: inline-flex; align-items: center; background: rgba(255,255,255,0.9); border-radius: 9999px; padding: 4px; border: 2px solid #FDE68A; cursor: pointer; transition: all 0.3s; }
-        .lang-switcher:hover { border-color: #F59E0B; }
-        .lang-option { padding: 6px 12px; border-radius: 9999px; font-size: 0.875rem; font-weight: 600; transition: all 0.3s; color: #92400E; }
-        .lang-option.active { background: #F59E0B; color: white; box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3); }
-        .lang-flag { width: 20px; height: 20px; border-radius: 50%; margin-right: 6px; object-fit: cover; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta.title">Bee The Change, Seal The Future | ESC30</title>
+  <meta name="description" data-i18n-attr="content:meta.desc" content="Gaziantep'te mutfaklardaki tek kullanımlık plastiği %40 azaltmayı hedefleyen, yerel arıcılar ve balmumu kumaş atölyeleriyle yürütülen 9 aylık Avrupa Dayanışma Programı projesi.">
+  <meta property="og:title" content="Bee The Change, Seal The Future">
+  <meta property="og:description" content="Plastiği geri dönüştürmek yerine hiç oluşturmamak: Gaziantep'te balmumu kumaş atölyeleri.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#f7f1e5">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add("js")</script>
 </head>
-<body class="font-sans text-dark antialiased honeycomb-bg overflow-x-hidden">
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="seal-base" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="42" fill="#e8a524" stroke="#e8a524" stroke-width="10" stroke-linecap="round" stroke-dasharray="0.01 8.24"/>
+      <circle cx="50" cy="50" r="42" fill="#e8a524"/>
+      <circle cx="50" cy="50" r="34" fill="none" stroke="#8a5708" stroke-width="1.4" opacity=".5"/>
+      <path d="M22 38 A30 30 0 0 1 44 20" fill="none" stroke="#fbe3a2" stroke-width="3.2" stroke-linecap="round" opacity=".9"/>
+    </symbol>
+    <symbol id="seal" viewBox="0 0 100 100">
+      <use href="#seal-base"/>
+      <polygon points="50,33 64.7,41.5 64.7,58.5 50,67 35.3,58.5 35.3,41.5" fill="none" stroke="#6b4306" stroke-width="3" stroke-linejoin="round"/>
+      <polygon points="50,43 56.1,46.5 56.1,53.5 50,57 43.9,53.5 43.9,46.5" fill="#6b4306"/>
+    </symbol>
+    <symbol id="i-comb" viewBox="0 0 24 24"><path d="M12 2.8l7.8 4.5v9.4L12 21.2l-7.8-4.5V7.3z"/><path d="M12 8.3l3.4 2v3.9L12 16.2l-3.4-2v-3.9z"/></symbol>
+    <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6.5" r="2.6"/><circle cx="6" cy="17.5" r="2.6"/><path d="M8.2 8L20 18.5M8.2 16L20 5.5"/></symbol>
+    <symbol id="i-iron" viewBox="0 0 24 24"><path d="M2.5 17.5h17a2 2 0 0 0 2-2c0-3.9-3.1-7-7-7H8.8a5 5 0 0 0-4.8 3.6z"/><path d="M11 8.5V5.5h7"/><path d="M7 14h.01M10 14h.01"/></symbol>
+    <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3 12h18a9 8 0 0 1-18 0z"/><path d="M5 12c.5-4 3.4-6.5 7-6.5s6.5 2.5 7 6.5"/><path d="M9 20.5h6"/></symbol>
+    <symbol id="i-recycle" viewBox="0 0 24 24"><path d="M7.5 19H4.8a1.6 1.6 0 0 1-1.4-2.4l2.5-4.3"/><path d="M12.5 19h6.7a1.6 1.6 0 0 0 1.4-2.4l-2.4-4.1"/><path d="M8.8 7.2l1.8-3.1a1.6 1.6 0 0 1 2.8 0l2.5 4.3"/><path d="M14.5 16.5L12.5 19l2 2.5M3.5 10.5l2.4 1.8 1-3M16 5.8l-.1 2.9 3-.3"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19.5C4.5 11 10 4.5 20 4.5c.5 9.5-5.5 15-15 15z"/><path d="M5 19.5c3.5-4.5 6.5-7.5 10.5-10"/></symbol>
+    <symbol id="i-loop" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.3-4.9L4 8"/><path d="M4 3.5V8h4.5"/><path d="M4 13a8 8 0 0 0 14.3 4.9L20 16"/><path d="M20 20.5V16h-4.5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11L12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.3"/><path d="M3 19.5a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.6"/><path d="M16 13.8a4.8 4.8 0 0 1 5 5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4.5 5.5A2.5 2.5 0 0 1 7 3h12.5v15H7a2.5 2.5 0 0 0-2.5 2.5z"/><path d="M4.5 20.5A2.5 2.5 0 0 1 7 18h12.5v3H7"/></symbol>
+    <symbol id="i-bus" viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="14" rx="2.5"/><path d="M4 11h16M8 21v-3.5M16 21v-3.5M8 14.5h.01M16 14.5h.01"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.2v5.6l4.6-2.8z"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 7.5h3l1.8-2.5h6.4L17 7.5h3v11.5H4z"/><circle cx="12" cy="13" r="3.4"/></symbol>
+    <symbol id="i-hash" viewBox="0 0 24 24"><path d="M5 9h15M4 15h15M10.5 4l-2 16M15.5 4l-2 16"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4.5" rx="1"/><path d="M5 12.5V20h14v-7.5M12 8v12"/><path d="M12 8c-1.5-3.8-6-4-6-1.5C6 8 9 8 12 8zM12 8c1.5-3.8 6-4 6-1.5C18 8 15 8 12 8z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V11M10 20V5M16 20v-6M3 20.5h18"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z"/><path d="M18.5 16v4M16.5 18h4"/></symbol>
+    <symbol id="i-seminar" viewBox="0 0 24 24"><path d="M3 4h18M4.5 4v10h15V4M12 14v3.5M8 21l4-3.5 4 3.5"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 20.5V11l5.5 3.5V11l5.5 3.5V4.5h4.5v16z"/><path d="M3 20.5h18M7 17.5h2M12 17.5h2"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V3.5M5 4h12l-2.5 4.2L17 12.5H5"/></symbol>
+    <symbol id="i-bottle" viewBox="0 0 24 24"><path d="M9.5 2.5h5M10 2.5v3L8 8.5V20a1.5 1.5 0 0 0 1.5 1.5h5A1.5 1.5 0 0 0 16 20V8.5l-2-3v-3"/><path d="M8 13h8"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8.5h14l-1.2 12H6.2z"/><path d="M9 8.5V6.5a3 3 0 0 1 6 0v2"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/><path d="M14 14h2.5v2.5H14zM18 18h2v2h-2zM14 20h2M20 14v2"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3.5 10v4h3l8 4.5v-13l-8 4.5z"/><path d="M18 9a4.2 4.2 0 0 1 0 6M6.5 14l1.5 5.5"/></symbol>
+    <symbol id="i-uni" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5z"/><path d="M5.5 10v7.5M10 10v7.5M14 10v7.5M18.5 10v7.5M3 20.5h18"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-form" viewBox="0 0 24 24"><path d="M8.5 3.5h7v3h-7z"/><path d="M8.5 5H5.5v16h13V5h-3"/><path d="M8.5 11.5h7M8.5 15h7M8.5 18h4"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5L21.5 20h-19z"/><path d="M12 10v4.5M12 17.2v.3"/></symbol>
+    <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.5s6.5 7 6.5 11a6.5 6.5 0 0 1-13 0c0-4 6.5-11 6.5-11z"/></symbol>
+    <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M3.5 16.5L16.5 3.5l4 4-13 13z"/><path d="M8 12l2 2M11 9l2 2M14 6l2 2"/></symbol>
+  </defs>
+</svg>
 
-    <div class="progress-bar" id="progressBar"></div>
+<a class="skip" href="#main" data-i18n="nav.skip">İçeriğe geç</a>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
-        <div class="glass shadow-sm">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-20">
-                    <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                        <div class="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center hexagon relative group">
-                            <i class="fas fa-bee text-white text-xl group-hover:animate-buzz"></i>
-                        </div>
-                        <div class="hidden sm:block">
-                            <h1 class="font-display font-bold text-xl text-dark leading-none" data-tr="Bee The Change" data-en="Bee The Change">Bee The Change</h1>
-                            <span class="text-xs text-nature-600 font-medium" data-tr="Seal The Future" data-en="Seal The Future">Seal The Future</span>
-                        </div>
-                    </div>
-
-                    <div class="hidden md:flex items-center space-x-6">
-                        <a href="#about" class="nav-link text-gray-700 hover:text-primary-600 font-medium transition-colors" data-tr="Proje" data-en="Project">Project</a>
-                        <a href="#roadmap" class="nav-link text-gray-700 hover:text-primary-600 font-medium transition-colors" data-tr="Yol Haritası" data-en="Roadmap">Roadmap</a>
-                        <a href="#workshops" class="nav-link text-gray-700 hover:text-primary-600 font-medium transition-colors" data-tr="Atölyeler" data-en="Workshops">Workshops</a>
-                        <a href="#impact" class="nav-link text-gray-700 hover:text-primary-600 font-medium transition-colors" data-tr="Etki" data-en="Impact">Impact</a>
-                        
-                        <!-- Language Switcher -->
-                        <div class="lang-switcher" onclick="toggleLanguage()">
-                            <div class="lang-option" id="lang-tr" data-lang="tr">
-                                <span>🇹🇷 TR</span>
-                            </div>
-                            <div class="lang-option active" id="lang-en" data-lang="en">
-                                <span>🇬🇧 EN</span>
-                            </div>
-                        </div>
-
-                        <button onclick="openModal()" class="bg-primary-500 hover:bg-primary-600 text-white px-5 py-2.5 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg text-sm flex items-center gap-2">
-                            <span class="btn-text" data-tr="Katıl" data-en="Join">Join</span>
-                            <i class="fas fa-arrow-right text-xs"></i>
-                        </button>
-                    </div>
-
-                    <div class="md:hidden flex items-center gap-4">
-                        <!-- Mobile Language Switcher -->
-                        <button onclick="toggleLanguage()" class="flex items-center gap-1 px-3 py-1.5 rounded-full border-2 border-primary-200 bg-white text-primary-700 font-bold text-sm">
-                            <span id="mobile-lang-display">🇬🇧 EN</span>
-                        </button>
-                        
-                        <button onclick="toggleMobileMenu()" class="text-gray-700 hover:text-primary-600 focus:outline-none p-2">
-                            <i class="fas fa-bars text-2xl" id="menuIcon"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="md:hidden hidden bg-white border-t border-gray-100 absolute w-full shadow-lg" id="mobileMenu">
-            <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md" data-tr="Proje Hakkında" data-en="About Project">About Project</a>
-                <a href="#roadmap" onclick="toggleMobileMenu()" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md" data-tr="12 Aylık Plan" data-en="12 Month Plan">12 Month Plan</a>
-                <a href="#workshops" onclick="toggleMobileMenu()" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md" data-tr="Atölyeler" data-en="Workshops">Workshops</a>
-                <a href="#impact" onclick="toggleMobileMenu()" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md" data-tr="Etki Hedefleri" data-en="Impact Goals">Impact Goals</a>
-                <button onclick="openModal(); toggleMobileMenu();" class="w-full mt-4 bg-primary-500 text-white px-6 py-3 rounded-full font-semibold text-center" data-tr="Projeye Katıl" data-en="Join Project">Join Project</button>
-            </div>
-        </div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Bee The Change, Seal The Future">
+      <svg aria-hidden="true"><use href="#seal"/></svg>
+      <span class="brand-name">Bee The Change<small>Seal The Future</small></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-i18n="nav.menu">Menü</button>
+    <nav class="nav" id="nav" aria-label="Ana menü">
+      <a href="#hedefler" data-i18n="nav.goals">Hedefler</a>
+      <a href="#takvim" data-i18n="nav.timeline">Takvim</a>
+      <a href="#etkinlikler" data-i18n="nav.events">Etkinlikler</a>
+      <a href="#olcum" data-i18n="nav.measure">Ölçüm</a>
+      <a href="#ekip" data-i18n="nav.team">Ekip</a>
+      <a href="toolkit.html" data-i18n="nav.toolkit">Dijital Toolkit</a>
+      <div class="lang" role="group" aria-label="Dil / Language">
+        <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-ink" href="#katil" data-i18n="nav.join">Katıl</a>
     </nav>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <div class="absolute top-20 right-10 w-64 h-64 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
-            <div class="absolute bottom-20 left-10 w-72 h-72 bg-nature-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float-delayed"></div>
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow" data-i18n="hero.kicker">Avrupa Dayanışma Programı · ESC30 · Gaziantep</span>
+        <h1 data-i18n-html="hero.title">Doğayı koru, <em>geleceği mühürle.</em></h1>
+        <p class="lede" data-i18n="hero.lede">Mutfaklardaki streç filmin ve plastik poşetin yerine, yerel arıcıların kullanılmayan peteklerinden elde edilen balmumu ile terzilerden artan kumaşları koyuyoruz. Amacımız atığı geri dönüştürmek değil, hiç oluşturmamak.</p>
+        <div class="actions">
+          <a class="btn btn-wax" href="#katil"><span data-i18n="hero.cta1">Katılımcı ol</span><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-line" href="toolkit.html#balmumu-kumas" data-i18n="hero.cta2">Balmumu kumaş nasıl yapılır?</a>
         </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-4xl mx-auto">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-primary-200 shadow-sm mb-8 animate-fade-in-up">
-                    <span class="flex h-2 w-2 rounded-full bg-primary-500 animate-pulse"></span>
-                    <span class="text-sm font-semibold text-primary-700 tracking-wide uppercase" data-tr="ESC30 Dayanışma Projesi • Gaziantep" data-en="ESC30 Solidarity Project • Gaziantep">ESC30 Solidarity Project • Gaziantep</span>
-                </div>
-
-                <h1 class="font-display text-5xl md:text-7xl font-bold text-dark mb-6 leading-tight animate-fade-in-up" style="animation-delay: 0.1s">
-                    <span data-tr="Doğayı" data-en="Protect">Protect</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-700" data-tr="Koru" data-en="Nature">Nature</span>,<br>
-                    <span data-tr="Geleceği" data-en="Seal the">Seal the</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-nature-500 to-nature-700" data-tr="Mühürle" data-en="Future">Future</span>
-                </h1>
-                
-                <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s">
-                    <span data-tr="%40 plastik atık azaltma hedefiyle balmumu kumaş atölyeleri, arıcılık seminerleri ve sürdürülebilir yaşam hareketi." data-en="Beeswax wrap workshops, beekeeping seminars and sustainable living movement with a 40% plastic waste reduction goal.">Beeswax wrap workshops, beekeeping seminars and sustainable living movement with a 40% plastic waste reduction goal.</span>
-                    <span class="font-semibold text-primary-600" data-tr="12 aylık" data-en="12 month">12 month</span> <span data-tr="yerel dayanışma projesi." data-en="local solidarity project.">local solidarity project.</span>
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style="animation-delay: 0.3s">
-                    <button onclick="document.getElementById('workshops').scrollIntoView({behavior: 'smooth'})" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group">
-                        <span data-tr="Atölyelere Göz At" data-en="Explore Workshops">Explore Workshops</span>
-                        <i class="fas fa-chevron-down group-hover:translate-y-1 transition-transform"></i>
-                    </button>
-                    <button onclick="openModal()" class="w-full sm:w-auto px-8 py-4 bg-white text-primary-700 border-2 border-primary-200 rounded-full font-bold text-lg hover:border-primary-400 hover:bg-primary-50 transition-all flex items-center justify-center gap-2">
-                        <i class="fas fa-paper-plane"></i>
-                        <span data-tr="Hemen Başvur" data-en="Apply Now">Apply Now</span>
-                    </button>
-                </div>
-
-                <div class="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.4s">
-                    <div class="text-center">
-                        <div class="font-display text-3xl md:text-4xl font-bold text-nature-600">60+</div>
-                        <div class="text-sm text-gray-500 mt-1 font-medium" data-tr="Katılımcı" data-en="Participants">Participants</div>
-                    </div>
-                    <div class="text-center border-x border-primary-200">
-                        <div class="font-display text-3xl md:text-4xl font-bold text-primary-600">%40</div>
-                        <div class="text-sm text-gray-500 mt-1 font-medium" data-tr="Plastik Azaltımı" data-en="Plastic Reduction">Plastic Reduction</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="font-display text-3xl md:text-4xl font-bold text-nature-600">12</div>
-                        <div class="text-sm text-gray-500 mt-1 font-medium" data-tr="Ay Süre" data-en="Months">Months</div>
-                    </div>
-                </div>
-            </div>
+        <div class="stats">
+          <div class="stat"><b data-i18n="hero.st1b">9 ay</b><span data-i18n="hero.st1">süren dayanışma projesi</span></div>
+          <div class="stat"><b>30</b><span data-i18n="hero.st2">katılımcı, 18–30 yaş</span></div>
+          <div class="stat"><b>%40</b><span data-i18n="hero.st3">daha az tek kullanımlık plastik</span></div>
+          <div class="stat"><b>5</b><span data-i18n="hero.st4">kişilik gönüllü genç ekip</span></div>
         </div>
-    </section>
+      </div>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white/50 section-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-primary-400 to-nature-400 rounded-3xl transform rotate-3 opacity-20"></div>
-                    <div class="relative bg-white p-6 rounded-3xl shadow-2xl">
-                        <div class="aspect-square rounded-2xl overflow-hidden bg-primary-50 flex items-center justify-center relative">
-                            <i class="fas fa-leaf text-9xl text-primary-200 absolute opacity-50"></i>
-                            <div class="text-center z-10 p-8">
-                                <i class="fas fa-bee text-6xl text-primary-500 mb-4 animate-float"></i>
-                                <h3 class="font-display text-2xl font-bold text-dark mb-2" data-tr="Sürdürülebilir Yaşam" data-en="Sustainable Living">Sustainable Living</h3>
-                                <p class="text-gray-600" data-tr="Balmumu kumaşları öğren, plastik kullanımını azalt" data-en="Learn beeswax wraps, reduce plastic usage">Learn beeswax wraps, reduce plastic usage</p>
-                            </div>
-                        </div>
-                        <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg border border-primary-100">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-nature-100 flex items-center justify-center">
-                                    <i class="fas fa-recycle text-nature-600"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-bold text-dark">Zero Waste</div>
-                                    <div class="text-xs text-gray-500" data-tr="Farkındalık" data-en="Awareness">Awareness</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="absolute -top-6 -left-6 bg-white p-4 rounded-xl shadow-lg border border-primary-100">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center">
-                                    <i class="fas fa-hands-holding-circle text-primary-600"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-bold text-dark" data-tr="Yerel Dayanışma" data-en="Local Solidarity">Local Solidarity</div>
-                                    <div class="text-xs text-gray-500">Gaziantep</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="inline-block px-4 py-2 rounded-full bg-nature-100 text-nature-700 font-semibold text-sm mb-4" data-tr="Proje Kimliği" data-en="Project Identity">Project Identity</div>
-                    <h2 class="font-display text-4xl font-bold text-dark mb-6" data-tr="Neden Balmumu ve Arıcılık?" data-en="Why Beeswax and Beekeeping?">Why Beeswax and Beekeeping?</h2>
-                    <div class="space-y-4 text-gray-600 leading-relaxed">
-                        <p>
-                            <span data-tr="Mutfaklarda gıdaları korumak için kullanılan streç filmler ve plastik poşetler, geri dönüştürülemez yapıları nedeniyle ciddi bir çevre kirliliği oluşturuyor." data-en="Cling films and plastic bags used to protect food in kitchens create serious environmental pollution due to their non-recyclable nature.">Cling films and plastic bags used to protect food in kitchens create serious environmental pollution due to their non-recyclable nature.</span>
-                            <span data-tr="Bölgemizdeki pazarlarda plastik türevleri bilinçsizce kullanılıyor ve" data-en="In local markets, plastic derivatives are used unconsciously and"> In local markets, plastic derivatives are used unconsciously and </span> <span class="font-semibold text-primary-600" data-tr="atık oluşmadan engelleyici" data-en="preventive waste measures">preventive waste measures</span> <span data-tr="bir girişim bulunmuyordu." data-en="were not available.">were not available.</span>
-                        </p>
-                        <p>
-                            <span data-tr="Bu gözlem doğrultusunda genel bilgi eksikliklerini gidermek ve" data-en="In line with this observation, to eliminate general knowledge deficiencies and">In line with this observation, to eliminate general knowledge deficiencies and </span> <span class="font-semibold text-nature-600" data-tr="arıların ekosistem için önemine" data-en="highlight the importance of bees">highlight the importance of bees</span> <span data-tr="dikkat çekmek amacıyla bu projeyi başlatıyoruz." data-en="for the ecosystem, we are launching this project."> for the ecosystem, we are launching this project.</span>
-                        </p>
-                        <div class="grid sm:grid-cols-2 gap-4 mt-6">
-                            <div class="flex items-start gap-3 p-4 bg-primary-50 rounded-xl">
-                                <i class="fas fa-check-circle text-primary-600 mt-1"></i>
-                                <div>
-                                    <h4 class="font-semibold text-dark mb-1">EU Green Deal</h4>
-                                    <p class="text-sm" data-tr="Dijitalleşme hedefleriyle uyumlu sürdürülebilirlik" data-en="Sustainability aligned with digitalization goals">Sustainability aligned with digitalization goals</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 p-4 bg-nature-50 rounded-xl">
-                                <i class="fas fa-check-circle text-nature-600 mt-1"></i>
-                                <div>
-                                    <h4 class="font-semibold text-dark mb-1">12th Development Plan</h4>
-                                    <p class="text-sm" data-tr="'Kaliteli İnsan, Güçlü Toplum' vizyonu" data-en="'Qualified Human, Strong Society' vision">'Qualified Human, Strong Society' vision</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="hero-art">
+        <div class="art-panel">
+          <svg class="scene" viewBox="0 0 480 456" role="img" aria-label="Balmumu kumaşla kapatılmış bir kase, petekler ve bir arı">
+            <defs>
+              <pattern id="wrapdots" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
+                <rect width="18" height="18" fill="#eeb035"/>
+                <circle cx="4" cy="4" r="2.2" fill="#fff4d2" opacity=".8"/>
+                <circle cx="13" cy="13" r="2.2" fill="#8a5708" opacity=".28"/>
+              </pattern>
+            </defs>
+            <ellipse cx="240" cy="378" rx="160" ry="18" fill="#8a5708" opacity=".16"/>
+            <path d="M104 262 C112 340 170 374 240 374 C310 374 368 340 376 262 Z" fill="#fffaf0" stroke="#241c13" stroke-width="2.5"/>
+            <path d="M114 304 C170 326 310 326 366 304" fill="none" stroke="#4a6b3f" stroke-width="7" stroke-linecap="round" opacity=".85"/>
+            <path d="M125 330 C175 348 305 348 355 330" fill="none" stroke="#4a6b3f" stroke-width="2.5" stroke-linecap="round" opacity=".5"/>
+            <path d="M92 264 C96 190 160 160 240 158 C320 160 384 190 388 264 C380 282 362 280 352 276 C344 298 322 298 312 286 C298 306 272 304 262 290 C250 306 226 306 216 290 C204 304 180 304 170 286 C156 298 136 296 128 276 C116 282 98 282 92 264 Z" fill="url(#wrapdots)" stroke="#8a5708" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M170 286 C176 250 192 216 216 198 M262 290 C262 252 272 216 294 192 M128 276 C134 242 150 216 172 202 M352 276 C350 244 340 216 322 198" fill="none" stroke="#8a5708" stroke-width="2" stroke-linecap="round" opacity=".35"/>
+            <path d="M150 200 C182 178 222 172 254 172" fill="none" stroke="#fff5d6" stroke-width="7" stroke-linecap="round" opacity=".75"/>
+            <g stroke="#8a5708" stroke-width="2" stroke-linejoin="round">
+              <polygon points="70,375 87.3,385 87.3,405 70,415 52.7,405 52.7,385" fill="#e8a524"/>
+              <polygon points="104.6,375 121.9,385 121.9,405 104.6,415 87.3,405 87.3,385" fill="#f4c65a"/>
+              <polygon points="87.3,345 104.6,355 104.6,375 87.3,385 70,375 70,355" fill="#eeb035"/>
+            </g>
+            <g fill="#fff4d2" opacity=".7"><circle cx="70" cy="395" r="4"/><circle cx="104.6" cy="395" r="4"/><circle cx="87.3" cy="365" r="4"/></g>
+            <path d="M392 428 C398 400 408 378 428 356" fill="none" stroke="#4a6b3f" stroke-width="3" stroke-linecap="round"/>
+            <path d="M401 394 C384 388 376 372 379 356 C396 361 405 377 401 394 Z" fill="#4a6b3f"/>
+            <path d="M414 372 C424 356 442 352 454 357 C447 371 430 378 414 372 Z" fill="#6b8c5c"/>
+            <path d="M398 416 C382 414 370 402 368 388 C384 390 396 402 398 416 Z" fill="#6b8c5c"/>
+            <path d="M240 150 C282 88 330 150 368 116" fill="none" stroke="#241c13" stroke-width="2" stroke-dasharray="3 7" stroke-linecap="round" opacity=".45"/>
+            <g class="bee">
+              <ellipse cx="384" cy="95" rx="12" ry="19" transform="rotate(-22 384 95)" fill="#ffffff" fill-opacity=".85" stroke="#241c13" stroke-width="1.6"/>
+              <ellipse cx="399" cy="93" rx="11" ry="17" transform="rotate(20 399 93)" fill="#ffffff" fill-opacity=".85" stroke="#241c13" stroke-width="1.6"/>
+              <ellipse cx="392" cy="116" rx="23" ry="15.5" fill="#f4c65a" stroke="#241c13" stroke-width="2"/>
+              <path d="M385 102 C381 110 381 122 385 130 M397 101 C393 109 393 123 397 131" stroke="#241c13" stroke-width="4.5" fill="none"/>
+              <circle cx="416" cy="113" r="9.5" fill="#241c13"/>
+              <circle cx="419" cy="110" r="2" fill="#fff"/>
+              <path d="M369 117 l-8 1.5" stroke="#241c13" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M420 104 C424 96 428 94 432 94 M416 104 C418 95 420 92 423 90" stroke="#241c13" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            </g>
+          </svg>
         </div>
-    </section>
-
-    <!-- Roadmap Section -->
-    <section id="roadmap" class="py-20 section-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-block px-4 py-2 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm mb-4" data-tr="12 Aylık Süreç" data-en="12 Month Process">12 Month Process</div>
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-dark mb-4" data-tr="Proje Yol Haritası" data-en="Project Roadmap">Project Roadmap</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-tr="Hazırlık, uygulama, değerlendirme ve yaygınlaştırma aşamalarıyla sürdürülebilir bir dönüşüm." data-en="Sustainable transformation through preparation, implementation, evaluation and dissemination phases.">Sustainable transformation through preparation, implementation, evaluation and dissemination phases.</p>
-            </div>
-
-            <!-- Phase Tabs -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12">
-                <button onclick="filterPhase('all')" class="phase-btn active px-5 py-2.5 rounded-full font-semibold text-sm transition-all border-2 border-primary-300 bg-primary-500 text-white shadow-lg" data-tr="Tümü" data-en="All">All</button>
-                <button onclick="filterPhase('prep')" class="phase-btn px-5 py-2.5 rounded-full font-semibold text-sm transition-all border-2 border-primary-200 bg-white text-primary-700 hover:bg-primary-50" data-tr="Hazırlık (Ay 1-3)" data-en="Preparation (M 1-3)">Preparation (M 1-3)</button>
-                <button onclick="filterPhase('impl')" class="phase-btn px-5 py-2.5 rounded-full font-semibold text-sm transition-all border-2 border-nature-200 bg-white text-nature-700 hover:bg-nature-50" data-tr="Uygulama (Ay 4-9)" data-en="Implementation (M 4-9)">Implementation (M 4-9)</button>
-                <button onclick="filterPhase('eval')" class="phase-btn px-5 py-2.5 rounded-full font-semibold text-sm transition-all border-2 border-primary-200 bg-white text-primary-700 hover:bg-primary-50" data-tr="Değerlendirme (Ay 10-11)" data-en="Evaluation (M 10-11)">Evaluation (M 10-11)</button>
-                <button onclick="filterPhase('share')" class="phase-btn px-5 py-2.5 rounded-full font-semibold text-sm transition-all border-2 border-nature-200 bg-white text-nature-700 hover:bg-nature-50" data-tr="Yaygınlaştırma (Ay 12)" data-en="Dissemination (M 12)">Dissemination (M 12)</button>
-            </div>
-
-            <div class="relative" id="timelineContainer">
-                <div class="timeline-line"></div>
-
-                <!-- MONTH 1 — Kick-off & Planning -->
-                <div class="relative mb-12 md:mb-0 timeline-item" data-phase="prep">
-                    <div class="md:flex items-center justify-between">
-                        <div class="md:w-5/12 mb-4 md:mb-0 md:text-right">
-                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-primary-100 hover:shadow-xl transition-shadow">
-                                <div class="flex items-center md:justify-end gap-2 mb-3">
-                                    <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-bold" data-tr="Ay 1" data-en="Month 1">Month 1</span>
-                                    <span class="inline-block px-2 py-0.5 bg-primary-50 text-primary-600 rounded-full text-xs font-semibold" data-tr="Hazırlık" data-en="Preparation">Preparation</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Kick-off Toplantısı ve Planlama" data-en="Kick-off Meeting & Planning">Kick-off Meeting & Planning</h3>
-                                <p class="text-gray-500 text-sm mb-3" data-tr="Tüm proje paydaşlarıyla proje vizyonunun paylaşılması ve sürecin başlatılması." data-en="Sharing the project vision with all stakeholders and initiating the process.">Sharing the project vision with all stakeholders and initiating the process.</p>
-                                <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Paydaşlarla kick-off toplantısı" data-en="Kick-off meeting with stakeholders">Kick-off meeting with stakeholders</span><i class="fas fa-users text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="İletişim kanallarının kurulması" data-en="Establishing communication channels">Establishing communication channels</span><i class="fas fa-comments text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Doğa yürüyüşü ve kaynaşma etkinlikleri" data-en="Nature walks and social bonding events">Nature walks and social bonding events</span><i class="fas fa-hiking text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Görev dağılımı ve iş birlikçi araştırması" data-en="Task distribution and partner research">Task distribution and partner research</span><i class="fas fa-tasks text-primary-500"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-primary-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-rocket text-white text-xs"></i></div>
-                        <div class="md:w-5/12 md:pl-8 hidden md:block"></div>
-                    </div>
-                </div>
-
-                <!-- MONTH 2 — Digital Infrastructure & Supply -->
-                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="prep">
-                    <div class="md:flex items-center justify-between">
-                        <div class="md:w-5/12 hidden md:block"></div>
-                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-primary-400 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-globe text-white text-xs"></i></div>
-                        <div class="md:w-5/12 md:pl-8">
-                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-primary-100 hover:shadow-xl transition-shadow ml-12 md:ml-0">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-bold" data-tr="Ay 2" data-en="Month 2">Month 2</span>
-                                    <span class="inline-block px-2 py-0.5 bg-primary-50 text-primary-600 rounded-full text-xs font-semibold" data-tr="Hazırlık" data-en="Preparation">Preparation</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Dijital Altyapı ve Tedarik" data-en="Digital Infrastructure & Supply">Digital Infrastructure & Supply</h3>
-                                <p class="text-gray-500 text-sm mb-3" data-tr="Sosyal medya hesaplarının ve web sitesinin kurularak dijital varlığın oluşturulması." data-en="Creating digital presence by setting up social media accounts and the project website.">Creating digital presence by setting up social media accounts and the project website.</p>
-                                <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center gap-2"><i class="fas fa-hashtag text-primary-500"></i><span data-tr="Instagram, YouTube, TikTok hesap açılışı" data-en="Launching Instagram, YouTube, TikTok accounts">Launching Instagram, YouTube, TikTok accounts</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-film text-primary-500"></i><span data-tr="İçerik senaryoları ve challenge konularının belirlenmesi" data-en="Content scripts and challenge topic selection">Content scripts and challenge topic selection</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-laptop-code text-primary-500"></i><span data-tr="Web sitesi kurulumu ve eğitici içerik yükleme" data-en="Website setup and educational content upload">Website setup and educational content upload</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-university text-primary-500"></i><span data-tr="Üniversite toplulukları ile bağlantı kurma" data-en="Connecting with university communities">Connecting with university communities</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MONTH 3 — Partnerships, Supply & Cost Analysis -->
-                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="prep">
-                    <div class="md:flex items-center justify-between">
-                        <div class="md:w-5/12 mb-4 md:mb-0 md:text-right">
-                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-primary-100 hover:shadow-xl transition-shadow">
-                                <div class="flex items-center md:justify-end gap-2 mb-3">
-                                    <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-bold" data-tr="Ay 3" data-en="Month 3">Month 3</span>
-                                    <span class="inline-block px-2 py-0.5 bg-primary-50 text-primary-600 rounded-full text-xs font-semibold" data-tr="Hazırlık" data-en="Preparation">Preparation</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="İş Birlikleri, Tedarik ve Maliyet Analizi" data-en="Partnerships, Supply & Cost Analysis">Partnerships, Supply & Cost Analysis</h3>
-                                <p class="text-gray-500 text-sm mb-3" data-tr="Yerel arıcılarla iş birliği ve atölye malzemelerinin tedarik planlaması." data-en="Partnership with local beekeepers and supply planning for workshop materials.">Partnership with local beekeepers and supply planning for workshop materials.</p>
-                                <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Yerel arıcılarla iş birliği toplantıları" data-en="Partnership meetings with local beekeepers">Partnership meetings with local beekeepers</span><i class="fas fa-handshake text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Atölye malzeme bilgisi ve tedarik iş birlikleri" data-en="Workshop material info and supply partnerships">Workshop material info and supply partnerships</span><i class="fas fa-boxes text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Tesis ve fabrika gezi planlarının netleştirilmesi" data-en="Finalizing facility and factory tour plans">Finalizing facility and factory tour plans</span><i class="fas fa-route text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Pamuklu kumaş, reçine, doğal yağ maliyet analizi" data-en="Cost analysis: cotton fabric, resin, natural oils">Cost analysis: cotton fabric, resin, natural oils</span><i class="fas fa-calculator text-primary-500"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-primary-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-clipboard-check text-white text-xs"></i></div>
-                        <div class="md:w-5/12 md:pl-8 hidden md:block"></div>
-                    </div>
-                </div>
-
-                <!-- Phase Divider: Implementation -->
-                <div class="relative my-8 md:my-16 flex justify-center z-10">
-                    <div class="bg-gradient-to-r from-nature-500 to-nature-600 text-white px-8 py-3 rounded-full font-bold shadow-xl flex items-center gap-3">
-                        <i class="fas fa-play-circle"></i>
-                        <span data-tr="UYGULAMA AŞAMASI BAŞLANGIÇ" data-en="IMPLEMENTATION PHASE START">IMPLEMENTATION PHASE START</span>
-                    </div>
-                </div>
-
-                <!-- MONTH 4 — Field Promotion & Participant Selection -->
-                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="impl">
-                    <div class="md:flex items-center justify-between">
-                        <div class="md:w-5/12 hidden md:block"></div>
-                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-nature-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-store text-white text-xs"></i></div>
-                        <div class="md:w-5/12 md:pl-8">
-                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-nature-100 hover:shadow-xl transition-shadow ml-12 md:ml-0">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold" data-tr="Ay 4" data-en="Month 4">Month 4</span>
-                                    <span class="inline-block px-2 py-0.5 bg-nature-50 text-nature-600 rounded-full text-xs font-semibold" data-tr="Uygulama" data-en="Implementation">Implementation</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Saha Tanıtımı ve Katılımcı Seçimi" data-en="Field Promotion & Participant Selection">Field Promotion & Participant Selection</h3>
-                                <p class="text-gray-500 text-sm mb-3" data-tr="Üniversite ve yerel lokasyonlarda tanıtım stantları ile hedef kitleye ulaşma." data-en="Reaching the target audience through promotional stalls at the university and local locations.">Reaching the target audience through promotional stalls at the university and local locations.</p>
-                                <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center gap-2"><i class="fas fa-bullhorn text-nature-500"></i><span data-tr="Gaziantep Üniversitesi'nde tanıtım stantları" data-en="Promotional stalls at Gaziantep University">Promotional stalls at Gaziantep University</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-seedling text-nature-500"></i><span data-tr="Plastik zararları ve sürdürülebilir alternatif farkındalığı" data-en="Plastic harm awareness and sustainable alternatives">Plastic harm awareness and sustainable alternatives</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-user-plus text-nature-500"></i><span data-tr="18-30 yaş arası 100 kişilik hedef grup kaydı" data-en="Registration of 100-person target group (ages 18-30)">Registration of 100-person target group (ages 18-30)</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MONTH 5 — Beekeeping Seminar -->
-                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="impl">
-                    <div class="md:flex items-center justify-between">
-                        <div class="md:w-5/12 mb-4 md:mb-0 md:text-right">
-                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-nature-100 hover:shadow-xl transition-shadow">
-                                <div class="flex items-center md:justify-end gap-2 mb-3">
-                                    <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold" data-tr="Ay 5" data-en="Month 5">Month 5</span>
-                                    <span class="inline-block px-2 py-0.5 bg-nature-50 text-nature-600 rounded-full text-xs font-semibold" data-tr="Uygulama" data-en="Implementation">Implementation</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Arıcılık Semineri" data-en="Beekeeping Seminar">Beekeeping Seminar</h3>
-                                <p class="text-gray-500 text-sm mb-3" data-tr="Profesyonel arıcı ile arıların ekosistem üzerindeki kritik önemini keşfetme." data-en="Discovering the critical importance of bees to the ecosystem with a professional beekeeper.">Discovering the critical importance of bees to the ecosystem with a professional beekeeper.</p>
-                                <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Arıların ekosistem için önemi ve biyolojik çeşitlilik" data-en="Importance of bees for ecosystem and biodiversity">Importance of bees for ecosystem and biodiversity</span><i class="fas fa-bee text-nature-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Profesyonel arıcı tarafından teorik seminer" data-en="Theoretical seminar by professional beekeeper">Theoretical seminar by professional beekeeper</span><i class="fas fa-chalkboard-teacher text-nature-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="İnteraktif etkinlik ve seminer analizi" data-en="Interactive activity and seminar analysis">Interactive activity and seminar analysis</span><i class="fas fa-people-arrows text-nature-500"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-nature-600 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-bee text-white text-xs"></i></div>
-                        <div class="md:w-5/12 md:pl-8 hidden md:block"></div>
-                    </div>
-                </div>
-
-                <!-- Show More Button -->
-                <div class="relative my-10 flex justify-center z-10" id="showMoreBtnWrapper">
-                    <button onclick="toggleRemainingMonths()" id="showMoreBtn" class="group flex items-center gap-3 px-8 py-4 bg-white border-2 border-dashed border-primary-300 rounded-2xl font-bold text-primary-700 hover:bg-primary-50 hover:border-primary-500 transition-all shadow-md hover:shadow-lg">
-                        <span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 group-hover:bg-primary-200 transition-colors">
-                            <i class="fas fa-chevron-down text-primary-600 transition-transform" id="showMoreIcon"></i>
-                        </span>
-                        <span>
-                            <span class="block text-base" data-tr="Devamını Gör" data-en="Show More" id="showMoreText">Show More</span>
-                            <span class="block text-xs font-normal text-gray-400" data-tr="Ay 6 – 12 arası planı görüntüle" data-en="View months 6 – 12" id="showMoreSub">View months 6 – 12</span>
-                        </span>
-                    </button>
-                </div>
-
-                <!-- Hidden remaining months -->
-                <div id="remainingMonths" class="hidden">
-
-                <!-- MONTH 6 — Visual Learning & Facility Tours -->
-                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="impl">
-                    <div class="md:flex items-center justify-between">
-                        <div class="md:w-5/12 hidden md:block"></div>
-                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-nature-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-bus text-white text-xs"></i></div>
-                        <div class="md:w-5/12 md:pl-8">
-                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-nature-100 hover:shadow-xl transition-shadow ml-12 md:ml-0">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold" data-tr="Ay 6" data-en="Month 6">Month 6</span>
-                                    <span class="inline-block px-2 py-0.5 bg-nature-50 text-nature-600 rounded-full text-xs font-semibold" data-tr="Uygulama" data-en="Implementation">Implementation</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Görsel Öğrenme ve Tesis Gezileri" data-en="Visual Learning & Facility Tours">Visual Learning & Facility Tours</h3>
-                                <p class="text-gray-500 text-sm mb-3" data-tr="Geri dönüşüm tesisi ve fabrika gezileri ile 'atık oluşmadan önleme' vizyonunun aktarılması." data-en="Conveying the 'prevention before waste' vision through recycling facility and factory tours.">Conveying the 'prevention before waste' vision through recycling facility and factory tours.</p>
-                                <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center gap-2"><i class="fas fa-industry text-nature-500"></i><span data-tr="Geri dönüşüm tesisine gezi ve saha görevli sunumu" data-en="Recycling facility tour with field staff presentation">Recycling facility tour with field staff presentation</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-clipboard-list text-nature-500"></i><span data-tr="Atık dönüşüm formu ve plastik geri dönüşüm zorluğu" data-en="Waste conversion forms and plastic recycling challenges">Waste conversion forms and plastic recycling challenges</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-camera text-nature-500"></i><span data-tr="Fotoğraf/video ile içerik üretimi" data-en="Photo/video content creation during tours">Photo/video content creation during tours</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-building text-nature-500"></i><span data-tr="Arıcılık ürünleri fabrika gezileri" data-en="Beekeeping products factory tours">Beekeeping products factory tours</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MONTH 7 — Beeswax & Beeswax Wrap Workshops -->
-                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="impl">
-                    <div class="md:flex items-center justify-between">
-                        <div class="md:w-5/12 mb-4 md:mb-0 md:text-right">
-                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-nature-100 hover:shadow-xl transition-shadow relative">
-                                <div class="absolute -top-3 -right-3 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md" data-tr="2 Atölye" data-en="2 Workshops">2 Workshops</div>
-                                <div class="flex items-center md:justify-end gap-2 mb-3">
-                                    <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold" data-tr="Ay 7" data-en="Month 7">Month 7</span>
-                                    <span class="inline-block px-2 py-0.5 bg-nature-50 text-nature-600 rounded-full text-xs font-semibold" data-tr="Uygulama" data-en="Implementation">Implementation</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Balmumu ve Balmumu Kumaş Atölyeleri" data-en="Beeswax & Beeswax Wrap Workshops">Beeswax & Beeswax Wrap Workshops</h3>
-                                <p class="text-gray-500 text-sm mb-3" data-tr="Atık peteklerden balmumu elde etme ve balmumu kumaş üretimi ile plastiksiz mutfak hedefi." data-en="Plastic-free kitchen goal through extracting beeswax from waste combs and producing beeswax wraps.">Plastic-free kitchen goal through extracting beeswax from waste combs and producing beeswax wraps.</p>
-                                <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Atık peteklerden balmumu elde etme atölyesi" data-en="Workshop: extracting beeswax from waste combs">Workshop: extracting beeswax from waste combs</span><i class="fas fa-fire text-nature-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Fırınlama/ütüleme/daldırma teknikleriyle kumaş üretimi" data-en="Wrap production: baking, ironing, or dipping techniques">Wrap production: baking, ironing, or dipping techniques</span><i class="fas fa-layer-group text-nature-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Balmumu kumaş faydaları ve kullanım bilgilendirmesi" data-en="Beeswax wrap benefits and usage guidelines">Beeswax wrap benefits and usage guidelines</span><i class="fas fa-info-circle text-nature-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="'Plastiksiz Mutfak' challenge başlatılması" data-en="Launching 'Plastic-Free Kitchen' challenge">"Plastic-Free Kitchen" challenge launch</span><i class="fas fa-hashtag text-nature-500"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-nature-600 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-hands text-white text-xs"></i></div>
-                        <div class="md:w-5/12 md:pl-8 hidden md:block"></div>
-                    </div>
-                </div>
-
-                <!-- MONTH 8 — Propolis Extraction -->
-                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="impl">
-                    <div class="md:flex items-center justify-between">
-                        <div class="md:w-5/12 hidden md:block"></div>
-                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-nature-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-jar text-white text-xs"></i></div>
-                        <div class="md:w-5/12 md:pl-8">
-                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-nature-100 hover:shadow-xl transition-shadow ml-12 md:ml-0">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold" data-tr="Ay 8" data-en="Month 8">Month 8</span>
-                                    <span class="inline-block px-2 py-0.5 bg-nature-50 text-nature-600 rounded-full text-xs font-semibold" data-tr="Uygulama" data-en="Implementation">Implementation</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Propolis Özütleme Atölyesi" data-en="Propolis Extraction Workshop">Propolis Extraction Workshop</h3>
-                                <p class="text-gray-500 text-sm mb-3" data-tr="Propolisin zeytinyağı ve alkol ile özütleme tekniklerinin uygulamalı öğretimi." data-en="Hands-on teaching of propolis extraction techniques using olive oil and alcohol.">Hands-on teaching of propolis extraction techniques using olive oil and alcohol.</p>
-                                <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center gap-2"><i class="fas fa-flask text-nature-500"></i><span data-tr="Zeytinyağı ve alkol ile özütleme uygulaması" data-en="Extraction practice with olive oil and alcohol">Extraction practice with olive oil and alcohol</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-user-md text-nature-500"></i><span data-tr="Uzmanlar tarafından propolis faydaları bilgilendirmesi" data-en="Expert briefing on propolis benefits">Expert briefing on propolis benefits</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-eye text-nature-500"></i><span data-tr="Arıcı eşliğinde gözlemsel katılımcı deneyimi" data-en="Observational participant experience with beekeeper">Observational participant experience with beekeeper</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MONTH 9 — Bee Venom & Royal Jelly Workshop -->
-                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="impl">
-                    <div class="md:flex items-center justify-between">
-                        <div class="md:w-5/12 mb-4 md:mb-0 md:text-right">
-                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-nature-100 hover:shadow-xl transition-shadow">
-                                <div class="flex items-center md:justify-end gap-2 mb-3">
-                                    <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold" data-tr="Ay 9" data-en="Month 9">Month 9</span>
-                                    <span class="inline-block px-2 py-0.5 bg-nature-50 text-nature-600 rounded-full text-xs font-semibold" data-tr="Uygulama" data-en="Implementation">Implementation</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Arı Zehri ve Arı Sütü Atölyesi" data-en="Bee Venom & Royal Jelly Workshop">Bee Venom & Royal Jelly Workshop</h3>
-                                <p class="text-gray-500 text-sm mb-3" data-tr="Arı sütü hasadı ve arı zehrinin sağlık/kozmetik alanındaki potansiyelinin keşfi." data-en="Discovering royal jelly harvesting and the health/cosmetic potential of bee venom.">Discovering royal jelly harvesting and the health/cosmetic potential of bee venom.</p>
-                                <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Kraliçe hücrelerinden arı sütü hasat süreci" data-en="Royal jelly harvesting from queen cells">Royal jelly harvesting from queen cells</span><i class="fas fa-crown text-nature-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Vakum cihazları ile toplama tekniği gösterimi" data-en="Demo of collection with vacuum devices">Demo of collection with vacuum devices</span><i class="fas fa-syringe text-nature-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Sağlık ve kozmetik alanında faydalar bilgilendirmesi" data-en="Health and cosmetic benefits briefing">Health and cosmetic benefits briefing</span><i class="fas fa-heartbeat text-nature-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Ekonomik değer üretme potansiyeli sunumu" data-en="Economic value creation potential presentation">Economic value creation potential presentation</span><i class="fas fa-chart-line text-nature-500"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-nature-600 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-vial text-white text-xs"></i></div>
-                        <div class="md:w-5/12 md:pl-8 hidden md:block"></div>
-                    </div>
-                </div>
-
-                <!-- Phase Divider: Evaluation -->
-                <div class="relative my-8 md:my-16 flex justify-center z-10">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-3 rounded-full font-bold shadow-xl flex items-center gap-3">
-                        <i class="fas fa-chart-bar"></i>
-                        <span data-tr="DEĞERLENDİRME AŞAMASI" data-en="EVALUATION PHASE">EVALUATION PHASE</span>
-                    </div>
-                </div>
-
-                <!-- MONTH 10 — Monitoring & Data Collection -->
-                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="eval">
-                    <div class="md:flex items-center justify-between">
-                        <div class="md:w-5/12 hidden md:block"></div>
-                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-primary-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-database text-white text-xs"></i></div>
-                        <div class="md:w-5/12 md:pl-8">
-                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-primary-100 hover:shadow-xl transition-shadow ml-12 md:ml-0">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-bold" data-tr="Ay 10" data-en="Month 10">Month 10</span>
-                                    <span class="inline-block px-2 py-0.5 bg-primary-50 text-primary-600 rounded-full text-xs font-semibold" data-tr="Değerlendirme" data-en="Evaluation">Evaluation</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="İzleme ve Veri Toplama" data-en="Monitoring & Data Collection">Monitoring & Data Collection</h3>
-                                <p class="text-gray-500 text-sm mb-3" data-tr="Agile yönetim yaklaşımı ile %40 plastik azaltma hedefinin veri bazlı analizi." data-en="Data-driven analysis of the 40% plastic reduction target using Agile management approach.">Data-driven analysis of the 40% plastic reduction target using Agile management approach.</p>
-                                <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center gap-2"><i class="fas fa-chart-line text-primary-500"></i><span data-tr="Plastik poşet/streç film kullanımı proje öncesi-sonrası karşılaştırma" data-en="Pre vs. post comparison of plastic bag/cling film usage">Pre vs. post comparison of plastic bag/cling film usage</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-globe text-primary-500"></i><span data-tr="Web sitesi erişim ve sosyal medya etkileşim oranları" data-en="Website access and social media engagement rates">Website access and social media engagement rates</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-hashtag text-primary-500"></i><span data-tr="Challenge geri dönüşleri ile etki ölçümü" data-en="Impact measurement via challenge feedback">Impact measurement via challenge feedback</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-file-alt text-primary-500"></i><span data-tr="Yaygınlaştırma verilerinin raporlanması" data-en="Reporting dissemination data">Reporting dissemination data</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MONTH 11 — Evaluation & Process Improvement -->
-                <div class="relative mb-12 md:mb-0 md:mt-12 timeline-item" data-phase="eval">
-                    <div class="md:flex items-center justify-between">
-                        <div class="md:w-5/12 mb-4 md:mb-0 md:text-right">
-                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-primary-100 hover:shadow-xl transition-shadow">
-                                <div class="flex items-center md:justify-end gap-2 mb-3">
-                                    <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-bold" data-tr="Ay 11" data-en="Month 11">Month 11</span>
-                                    <span class="inline-block px-2 py-0.5 bg-primary-50 text-primary-600 rounded-full text-xs font-semibold" data-tr="Değerlendirme" data-en="Evaluation">Evaluation</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Değerlendirme ve Süreç İyileştirme" data-en="Evaluation & Process Improvement">Evaluation & Process Improvement</h3>
-                                <p class="text-gray-500 text-sm mb-3" data-tr="Tüm faaliyetlerin etkililik, verimlilik ve sürdürülebilirlik açısından kapsamlı değerlendirmesi." data-en="Comprehensive evaluation of all activities in terms of effectiveness, efficiency and sustainability.">Comprehensive evaluation of all activities in terms of effectiveness, efficiency and sustainability.</p>
-                                <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Ölçme-değerlendirme testleri ve formları analizi" data-en="Assessment tests and evaluation forms analysis">Assessment tests and evaluation forms analysis</span><i class="fas fa-clipboard-check text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Bireysel geri dönüşler ve davranış değişimi analizi" data-en="Individual feedback and behavior change analysis">Individual feedback and behavior change analysis</span><i class="fas fa-user-check text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Agile geri bildirim döngüleri ile süreç optimizasyonu" data-en="Process optimization via Agile feedback loops">Process optimization via Agile feedback loops</span><i class="fas fa-sync-alt text-primary-500"></i></li>
-                                    <li class="flex items-center md:justify-end gap-2"><span data-tr="Yazılı iç rapor ve hesap verebilirlik belgesi" data-en="Written internal report and accountability document">Written internal report and accountability document</span><i class="fas fa-book text-primary-500"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-primary-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-search text-white text-xs"></i></div>
-                        <div class="md:w-5/12 md:pl-8 hidden md:block"></div>
-                    </div>
-                </div>
-
-                <!-- Phase Divider: Dissemination -->
-                <div class="relative my-8 md:my-16 flex justify-center z-10">
-                    <div class="bg-gradient-to-r from-nature-600 to-primary-500 text-white px-8 py-3 rounded-full font-bold shadow-xl flex items-center gap-3">
-                        <i class="fas fa-trophy"></i>
-                        <span data-tr="YAYGINLAŞTIRMA VE KAPANIŞ" data-en="DISSEMINATION & CLOSING">DISSEMINATION & CLOSING</span>
-                    </div>
-                </div>
-
-                <!-- MONTH 12 — Dissemination, Certification & Closing -->
-                <div class="relative md:mt-12 timeline-item" data-phase="share">
-                    <div class="md:flex items-center justify-between">
-                        <div class="md:w-5/12 hidden md:block"></div>
-                        <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-gradient-to-r from-nature-500 to-primary-500 border-4 border-white shadow-lg z-10 flex items-center justify-center"><i class="fas fa-flag-checkered text-white text-xs"></i></div>
-                        <div class="md:w-5/12 md:pl-8">
-                            <div class="bg-gradient-to-br from-white to-nature-50 p-6 rounded-2xl shadow-lg border border-nature-200 hover:shadow-xl transition-shadow ml-12 md:ml-0">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="inline-block px-3 py-1 bg-nature-100 text-nature-700 rounded-full text-sm font-bold" data-tr="Ay 12" data-en="Month 12">Month 12</span>
-                                    <span class="inline-block px-2 py-0.5 bg-primary-50 text-primary-600 rounded-full text-xs font-semibold" data-tr="Yaygınlaştırma" data-en="Dissemination">Dissemination</span>
-                                </div>
-                                <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Yaygınlaştırma, Sertifikalandırma ve Kapanış" data-en="Dissemination, Certification & Closing">Dissemination, Certification & Closing</h3>
-                                <p class="text-gray-500 text-sm mb-3" data-tr="Proje çıktılarının paylaşılması, dijital toolkit yayını ve Youthpass sertifikalandırması." data-en="Sharing project outcomes, publishing digital toolkit and Youthpass certification.">Sharing project outcomes, publishing digital toolkit and Youthpass certification.</p>
-                                <ul class="space-y-2 text-gray-600 text-sm">
-                                    <li class="flex items-center gap-2"><i class="fas fa-file-alt text-nature-500"></i><span data-tr="Genel proje raporu oluşturma" data-en="Creating comprehensive project report">Creating comprehensive project report</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-laptop text-nature-500"></i><span data-tr="Digital Toolkit açık erişim olarak yayınlama" data-en="Publishing Digital Toolkit as open access">Publishing Digital Toolkit as open access</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-microphone-alt text-nature-500"></i><span data-tr="Kapanış ve yaygınlaştırma semineri düzenleme" data-en="Organizing closing and dissemination seminar">Organizing closing and dissemination seminar</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-award text-nature-500"></i><span data-tr="Youthpass sertifikaları ile bireysel gelişim belgeleme" data-en="Youthpass certificates for individual development documentation">Youthpass certificates for individual development</span></li>
-                                    <li class="flex items-center gap-2"><i class="fas fa-share-alt text-nature-500"></i><span data-tr="İyi uygulama örnekleri ve katılımcı deneyimlerinin paylaşımı" data-en="Sharing best practices and participant experiences">Sharing best practices and participant experiences</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div><!-- end remainingMonths -->
-            </div>
+        <div class="float f1">
+          <span class="ib sm"><svg class="ic"><use href="#i-comb"/></svg></span>
+          <div><b data-i18n="hero.f1b">Atık petek</b><span data-i18n="hero.f1s">balmumuna dönüşüyor</span></div>
         </div>
-    </section>
-
-    <!-- Workshops Section -->
-    <section id="workshops" class="py-20 bg-white/50 section-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-block px-4 py-2 rounded-full bg-nature-100 text-nature-700 font-semibold text-sm mb-4" data-tr="Pratik Eğitimler" data-en="Practical Trainings">Practical Trainings</div>
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-dark mb-4" data-tr="Atölye Programı" data-en="Workshop Program">Workshop Program</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-tr="Uygulamalı eğitimlerle katılımcılara sürdürülebilir beceriler kazandırıyoruz." data-en="We provide participants with sustainable skills through practical training.">We provide participants with sustainable skills through practical training.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Workshop Cards with data attributes -->
-                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-primary-200 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-primary-100 rounded-full -mr-12 -mt-12 transition-transform group-hover:scale-150"></div>
-                    <div class="relative">
-                        <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-500 transition-colors">
-                            <i class="fas fa-layer-group text-2xl text-primary-600 group-hover:text-white"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Balmumu Kumaş Yapımı" data-en="Beeswax Wrap Making">Beeswax Wrap Making</h3>
-                        <p class="text-gray-600 text-sm mb-4" data-tr="Fırınlama, ütüleme ve daldırma tekniklerini öğrenerek kendi balmumu kumaşınızı üretin. Plastik alternatifine geçiş yapın." data-en="Learn baking, ironing and dipping techniques to make your own beeswax wraps. Switch to plastic alternatives.">Learn baking, ironing and dipping techniques to make your own beeswax wraps. Switch to plastic alternatives.</p>
-                        <div class="flex items-center gap-2 text-xs text-primary-600 font-semibold">
-                            <i class="fas fa-clock"></i>
-                            <span data-tr="4 Saat • Uygulamalı" data-en="4 Hours • Hands-on">4 Hours • Hands-on</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-nature-200 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-nature-100 rounded-full -mr-12 -mt-12 transition-transform group-hover:scale-150"></div>
-                    <div class="relative">
-                        <div class="w-14 h-14 bg-nature-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-nature-500 transition-colors">
-                            <i class="fas fa-jar text-2xl text-nature-600 group-hover:text-white"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Propolis Açma" data-en="Propolis Extraction">Propolis Extraction</h3>
-                        <p class="text-gray-600 text-sm mb-4" data-tr="Alkol veya zeytinyağı ile propolis açma tekniklerini öğrenin. Doğal antibiyotik ve bağışıklık güçlendirici propolisi kullanıma hazır hale getirin." data-en="Learn techniques to extract propolis with alcohol or olive oil. Prepare natural antibiotic and immunity booster propolis for use.">Learn techniques to extract propolis with alcohol or olive oil. Prepare natural antibiotic and immunity booster propolis for use.</p>
-                        <div class="flex items-center gap-2 text-xs text-nature-600 font-semibold">
-                            <i class="fas fa-clock"></i>
-                            <span data-tr="3 Saat • Uygulamalı" data-en="3 Hours • Hands-on">3 Hours • Hands-on</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-primary-200 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-primary-100 rounded-full -mr-12 -mt-12 transition-transform group-hover:scale-150"></div>
-                    <div class="relative">
-                        <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-500 transition-colors">
-                            <i class="fas fa-syringe text-2xl text-primary-600 group-hover:text-white"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Arı Zehri Elde Etme" data-en="Bee Venom Extraction">Bee Venom Extraction</h3>
-                        <p class="text-gray-600 text-sm mb-4" data-tr="Sağlık ve kozmetik alanında fayda sağlayan arı zehrini etik ve güvenli yöntemlerle elde etme teknikleri." data-en="Techniques for ethically and safely obtaining bee venom, which provides benefits in health and cosmetics.">Techniques for ethically and safely obtaining bee venom, which provides benefits in health and cosmetics.</p>
-                        <div class="flex items-center gap-2 text-xs text-primary-600 font-semibold">
-                            <i class="fas fa-clock"></i>
-                            <span data-tr="3 Saat • Teknik" data-en="3 Hours • Technical">3 Hours • Technical</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-nature-200 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-nature-100 rounded-full -mr-12 -mt-12 transition-transform group-hover:scale-150"></div>
-                    <div class="relative">
-                        <div class="w-14 h-14 bg-nature-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-nature-500 transition-colors">
-                            <i class="fas fa-crown text-2xl text-nature-600 group-hover:text-white"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Arı Sütü Üretimi" data-en="Royal Jelly Production">Royal Jelly Production</h3>
-                        <p class="text-gray-600 text-sm mb-4" data-tr="'Biyolojik Mucize' olarak adlandırılan arı sütünün elde edilmesi, saklanması ve kullanım alanları hakkında kapsamlı eğitim." data-en="Comprehensive training on obtaining, storing and usage areas of royal jelly, called the 'Biological Miracle'.">Comprehensive training on obtaining, storing and usage areas of royal jelly, called the 'Biological Miracle'.</p>
-                        <div class="flex items-center gap-2 text-xs text-nature-600 font-semibold">
-                            <i class="fas fa-clock"></i>
-                            <span data-tr="4 Saat • İleri Düzey" data-en="4 Hours • Advanced">4 Hours • Advanced</span>
-                        </div>
-                        </div>
-                </div>
-
-                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-primary-200 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-primary-100 rounded-full -mr-12 -mt-12 transition-transform group-hover:scale-150"></div>
-                    <div class="relative">
-                        <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-500 transition-colors">
-                            <i class="fas fa-recycle text-2xl text-primary-600 group-hover:text-white"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Geri Dönüşüm Gezileri" data-en="Recycling Facility Tours">Recycling Facility Tours</h3>
-                        <p class="text-gray-600 text-sm mb-4" data-tr="Yerel geri dönüşüm tesislerine düzenlenen gezilerle atık yönetimini yerinde görme ve 'Sıfır Atık' yaşam biçimi hakkında bilinçlenme." data-en="Becoming aware of waste management on-site through tours to local recycling facilities and learning about 'Zero Waste' lifestyle.">Becoming aware of waste management on-site through tours to local recycling facilities and learning about 'Zero Waste' lifestyle.</p>
-                        <div class="flex items-center gap-2 text-xs text-primary-600 font-semibold">
-                            <i class="fas fa-bus"></i>
-                            <span data-tr="Tam Gün • Gezi" data-en="Full Day • Tour">Full Day • Tour</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-nature-200 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-nature-100 rounded-full -mr-12 -mt-12 transition-transform group-hover:scale-150"></div>
-                    <div class="relative">
-                        <div class="w-14 h-14 bg-nature-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-nature-500 transition-colors">
-                            <i class="fas fa-video text-2xl text-nature-600 group-hover:text-white"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold text-dark mb-2" data-tr="Dijital İçerik Atölyesi" data-en="Digital Content Workshop">Digital Content Workshop</h3>
-                        <p class="text-gray-600 text-sm mb-4" data-tr="Projeyi dijital platformlarda yaygınlaştırma, sosyal medya yönetimi ve eğitici video içerikleri üretme becerileri." data-en="Skills for disseminating the project on digital platforms, social media management and producing educational video content.">Skills for disseminating the project on digital platforms, social media management and producing educational video content.</p>
-                        <div class="flex items-center gap-2 text-xs text-nature-600 font-semibold">
-                            <i class="fas fa-clock"></i>
-                            <span data-tr="3 Saat • Dijital" data-en="3 Hours • Digital">3 Hours • Digital</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="float f2">
+          <span class="ib sm leaf"><svg class="ic"><use href="#i-leaf"/></svg></span>
+          <div><b data-i18n="hero.f2b">Sıfır atık</b><span data-i18n="hero.f2s">oluşmadan önleme</span></div>
         </div>
-    </section>
-
-    <!-- Impact Section -->
-    <section id="impact" class="py-20 section-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-br from-nature-600 to-nature-800 rounded-3xl p-8 md:p-16 text-white relative overflow-hidden">
-                <div class="absolute inset-0 opacity-10">
-                    <svg width="100%" height="100%"><pattern id="hexagons" width="50" height="43.4" patternUnits="userSpaceOnUse" patternTransform="scale(3)"><path fill="none" stroke="white" stroke-width="1" d="M25 0 L50 14.4 L50 38.6 L25 53 L0 38.6 L0 14.4 Z"/></pattern><rect width="100%" height="100%" fill="url(#hexagons)"/></svg>
-                </div>
-
-                <div class="relative z-10">
-                    <div class="text-center mb-12">
-                        <h2 class="font-display text-4xl md:text-5xl font-bold mb-4" data-tr="Hedeflenen Etki" data-en="Targeted Impact">Targeted Impact</h2>
-                        <p class="text-nature-100 text-lg max-w-2xl mx-auto" data-tr="Projemizin somut çıktıları ve uzun vadeli sürdürülebilirlik hedefleri." data-en="Concrete outputs of our project and long-term sustainability goals.">Concrete outputs of our project and long-term sustainability goals.</p>
-                    </div>
-
-                    <div class="grid md:grid-cols-3 gap-8 mb-12">
-                        <div class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                            <div class="font-display text-5xl font-bold mb-2 counter" data-target="40">0</div>
-                            <div class="text-nature-100 font-semibold mb-1">%</div>
-                            <div class="text-white font-medium" data-tr="Plastik Kullanımı Azaltımı" data-en="Plastic Usage Reduction">Plastic Usage Reduction</div>
-                            <div class="text-sm text-nature-200 mt-2" data-tr="Katılımcıların mutfaklarında" data-en="In participants' kitchens">In participants' kitchens</div>
-                        </div>
-                        <div class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                            <div class="font-display text-5xl font-bold mb-2 counter" data-target="60">0</div>
-                            <div class="text-nature-100 font-semibold mb-1">+</div>
-                            <div class="text-white font-medium" data-tr="Doğrudan Katılımcı" data-en="Direct Participants">Direct Participants</div>
-                            <div class="text-sm text-nature-200 mt-2" data-tr="18-30 yaş arası gençler" data-en="Youth aged 18-30">Youth aged 18-30</div>
-                        </div>
-                        <div class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                            <div class="font-display text-5xl font-bold mb-2" data-tr="Sürekli" data-en="Permanent">Permanent</div>
-                            <div class="text-white font-medium" data-tr="Dijital Erişim" data-en="Digital Access">Digital Access</div>
-                            <div class="text-sm text-nature-200 mt-2" data-tr="Web sitesi ve toolkit aracılığıyla" data-en="Via website and toolkit">Via website and toolkit</div>
-                        </div>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
-                            <h3 class="font-display text-xl font-bold mb-3 flex items-center gap-2">
-                                <i class="fas fa-bullseye text-primary-300"></i>
-                                <span data-tr="Kısa Vadeli Hedefler" data-en="Short Term Goals">Short Term Goals</span>
-                            </h3>
-                            <ul class="space-y-2 text-nature-100">
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-primary-400 mt-1"></i><span data-tr="60 kişiye uygulamalı atölye eğitimi" data-en="Hands-on workshop training for 60 people">Hands-on workshop training for 60 people</span></li>
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-primary-400 mt-1"></i><span data-tr="Yerel arıcılarla iş birliği ağının kurulması" data-en="Establishing a cooperation network with local beekeepers">Establishing a cooperation network with local beekeepers</span></li>
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-primary-400 mt-1"></i><span data-tr="Sıfır Atık farkındalığının artırılması" data-en="Raising Zero Waste awareness">Raising Zero Waste awareness</span></li>
-                            </ul>
-                        </div>
-                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
-                            <h3 class="font-display text-xl font-bold mb-3 flex items-center gap-2">
-                                <i class="fas fa-infinity text-primary-300"></i>
-                                <span data-tr="Uzun Vadeli Etki" data-en="Long Term Impact">Long Term Impact</span>
-                            </h3>
-                            <ul class="space-y-2 text-nature-100">
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-primary-400 mt-1"></i><span data-tr="Dijital Toolkit ile bilgilerin kalıcı erişimi" data-en="Permanent access to information via Digital Toolkit">Permanent access to information via Digital Toolkit</span></li>
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-primary-400 mt-1"></i><span data-tr="Yerel sürdürülebilir yaşam topluluğu oluşturma" data-en="Creating a local sustainable living community">Creating a local sustainable living community</span></li>
-                                <li class="flex items-start gap-2"><i class="fas fa-check text-primary-400 mt-1"></i><span data-tr="AB Yeşil Dönüşüm vizyonuna katkı" data-en="Contributing to EU Green Deal vision">Contributing to EU Green Deal vision</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resources Section -->
-    <section id="resources" class="py-20 bg-white/50 section-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-block px-4 py-2 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm mb-4" data-tr="Dijital Kaynaklar" data-en="Digital Resources">Digital Resources</div>
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-dark mb-4">Digital Toolkit</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-tr="Proje sonrası da erişilebilir kalıcı kaynaklar ve eğitim materyalleri." data-en="Permanent resources and training materials accessible even after the project ends.">Permanent resources and training materials accessible even after the project ends.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-video text-red-600"></i></div>
-                    <h3 class="font-display text-lg font-bold text-dark mb-2" data-tr="Video Eğitimleri" data-en="Video Tutorials">Video Tutorials</h3>
-                    <p class="text-gray-600 text-sm mb-4" data-tr="Balmumu yapımı, arıcılık teknikleri ve sıfır atık yaşam üzerine adım adım video kılavuzları." data-en="Step-by-step video guides on beeswax making, beekeeping techniques and zero waste living.">Step-by-step video guides on beeswax making, beekeeping techniques and zero waste living.</p>
-                    <button class="text-primary-600 font-semibold text-sm hover:underline flex items-center gap-1">
-                        <span data-tr="İzle" data-en="Watch">Watch</span><i class="fas fa-external-link-alt text-xs"></i>
-                    </button>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-book text-blue-600"></i></div>
-                    <h3 class="font-display text-lg font-bold text-dark mb-2" data-tr="Rehber Dokümanlar" data-en="Guide Documents">Guide Documents</h3>
-                    <p class="text-gray-600 text-sm mb-4" data-tr="İndirilebilir PDF formatında atölye notları, malzeme listeleri ve teknik rehberler." data-en="Downloadable workshop notes, material lists and technical guides in PDF format.">Downloadable workshop notes, material lists and technical guides in PDF format.</p>
-                    <button class="text-primary-600 font-semibold text-sm hover:underline flex items-center gap-1">
-                        <span data-tr="İndir" data-en="Download">Download</span><i class="fas fa-download text-xs"></i>
-                    </button>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-mobile-alt text-purple-600"></i></div>
-                    <h3 class="font-display text-lg font-bold text-dark mb-2" data-tr="Sosyal Medya" data-en="Social Media">Social Media</h3>
-                    <p class="text-gray-600 text-sm mb-4" data-tr="Instagram ve TikTok üzerinden sürekli içerik, meydan okumalar ve topluluk etkileşimi." data-en="Continuous content, challenges and community interaction via Instagram and TikTok.">Continuous content, challenges and community interaction via Instagram and TikTok.</p>
-                    <button class="text-primary-600 font-semibold text-sm hover:underline flex items-center gap-1">
-                        <span data-tr="Takip Et" data-en="Follow">Follow</span><i class="fas fa-share text-xs"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 section-hidden">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="bg-gradient-to-r from-primary-500 via-primary-600 to-primary-500 rounded-3xl p-12 relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-full opacity-20">
-                    <div class="absolute top-10 left-10 w-20 h-20 bg-white rounded-full mix-blend-overlay filter blur-xl"></div>
-                    <div class="absolute bottom-10 right-10 w-32 h-32 bg-white rounded-full mix-blend-overlay filter blur-xl"></div>
-                </div>
-                
-                <div class="relative z-10">
-                    <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-6" data-tr="Değişimin Bir Parçası Ol" data-en="Be Part of the Change">Be Part of the Change</h2>
-                    <p class="text-primary-100 text-lg mb-8 max-w-2xl mx-auto">
-                        <span data-tr="18-30 yaş arası, sürdürülebilirliğe önem veren gençleri aramıza bekliyoruz. Ücretsiz atölyelere katıl, sertifika kazan ve geleceği değiştir." data-en="We welcome young people aged 18-30 who care about sustainability. Join free workshops, get certified and change the future.">We welcome young people aged 18-30 who care about sustainability. Join free workshops, get certified and change the future.</span>
-                    </p>
-                    <button onclick="openModal()" class="bg-white text-primary-600 px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all" data-tr="Projeye Şimdi Başvur" data-en="Apply to Project Now">
-                        Apply to Project Now
-                    </button>
-                    <p class="text-primary-200 text-sm mt-4">
-                        <i class="fas fa-info-circle mr-1"></i>
-                        <span data-tr="Başvurular değerlendirildikten sonra geri dönüş sağlanacaktır." data-en="You will be contacted after applications are reviewed.">You will be contacted after applications are reviewed.</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-12">
-                <div class="col-span-2">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center"><i class="fas fa-bee text-white"></i></div>
-                        <div>
-                            <h3 class="font-display font-bold text-xl">Bee The Change</h3>
-                            <span class="text-xs text-gray-400">Seal The Future</span>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm" data-tr="ESC30 Solidarity Project kapsamında Gaziantep'te yürütülen sürdürülebilir yaşam ve yerel dayanışma projesi. AB Yeşil Dönüşüm hedefleriyle uyumlu çalışmaktadır." data-en="A sustainable living and local solidarity project conducted in Gaziantep within the scope of ESC30 Solidarity Project. It works in alignment with EU Green Deal goals.">
-                        A sustainable living and local solidarity project conducted in Gaziantep within the scope of ESC30 Solidarity Project. It works in alignment with EU Green Deal goals.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4 text-primary-400" data-tr="Hızlı Bağlantılar" data-en="Quick Links">Quick Links</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#about" class="hover:text-white transition-colors" data-tr="Proje Hakkında" data-en="About Project">About Project</a></li>
-                        <li><a href="#roadmap" class="hover:text-white transition-colors" data-tr="12 Aylık Plan" data-en="12 Month Plan">12 Month Plan</a></li>
-                        <li><a href="#workshops" class="hover:text-white transition-colors" data-tr="Atölyeler" data-en="Workshops">Workshops</a></li>
-                        <li><a href="#resources" class="hover:text-white transition-colors" data-tr="Kaynaklar" data-en="Resources">Resources</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4 text-primary-400" data-tr="İletişim" data-en="Contact">Contact</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-center gap-2"><i class="fas fa-envelope text-primary-500"></i><span>info@beethechange.org</span></li>
-                        <li class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-primary-500"></i><span>Gaziantep, Türkiye</span></li>
-                        <li class="flex gap-3 mt-4">
-                            <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors"><i class="fab fa-youtube"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <div class="text-sm text-gray-500">© 2026 Bee The Change, Seal The Future. <span data-tr="Tüm hakları saklıdır." data-en="All rights reserved.">All rights reserved.</span></div>
-                <div class="flex gap-6 text-sm text-gray-500">
-                    <span>ESC30 Solidarity Project</span>
-                    <span class="text-primary-600">•</span>
-                    <span>Youthpass <span data-tr="Sertifikalı" data-en="Certified">Certified</span></span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Registration Modal -->
-    <div id="registrationModal" class="fixed inset-0 z-[100] hidden">
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal()"></div>
-        <div class="absolute inset-0 flex items-center justify-center p-4">
-            <div class="bg-white rounded-3xl w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl transform scale-95 opacity-0 transition-all duration-300" id="modalContent">
-                <div class="p-8">
-                    <div class="flex justify-between items-center mb-6">
-                        <div>
-                            <h3 class="font-display text-2xl font-bold text-dark" data-tr="Projeye Katıl" data-en="Join Project">Join Project</h3>
-                            <p class="text-gray-500 text-sm" data-tr="Bee The Change gönüllüsü ol" data-en="Become a Bee The Change volunteer">Become a Bee The Change volunteer</p>
-                        </div>
-                        <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"><i class="fas fa-times text-gray-600"></i></button>
-                    </div>
-                    
-                    <form onsubmit="handleSubmit(event)" class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1" data-tr="Ad Soyad" data-en="Full Name">Full Name</label>
-                            <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all" data-placeholder-tr="Adınız ve soyadınız" data-placeholder-en="Your name and surname" placeholder="Your name and surname">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1" data-tr="E-posta" data-en="Email">Email</label>
-                            <input type="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all" placeholder="email@example.com">
-                        </div>
-                        
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-1" data-tr="Yaş" data-en="Age">Age</label>
-                                <input type="number" min="18" max="30" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all" data-placeholder-tr="18-30" data-placeholder-en="18-30" placeholder="18-30">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-1" data-tr="Şehir" data-en="City">City</label>
-                                <input type="text" value="Gaziantep" readonly class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-600 cursor-not-allowed">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1" data-tr="İlgi Alanları (Opsiyonel)" data-en="Interests (Optional)">Interests (Optional)</label>
-                            <textarea class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all h-24 resize-none" data-placeholder-tr="Sürdürülebilirlik, arıcılık veya sıfır atık hakkındaki deneyimleriniz..." data-placeholder-en="Your experiences with sustainability, beekeeping or zero waste..." placeholder="Your experiences with sustainability, beekeeping or zero waste..."></textarea>
-                        </div>
-                        
-                        <div class="flex items-start gap-2 pt-2">
-                            <input type="checkbox" id="consent" required class="mt-1 w-4 h-4 text-primary-600 rounded border-gray-300 focus:ring-primary-500">
-                            <label for="consent" class="text-xs text-gray-500 leading-tight">
-                                <span data-tr="Kişisel verilerimin projede kullanılmasına ve iletişim bilgilerimin saklanmasına izin veriyorum." data-en="I allow my personal data to be used in the project and my contact information to be stored.">I allow my personal data to be used in the project and my contact information to be stored.</span>
-                                <a href="#" class="text-primary-600 hover:underline" data-tr="Gizlilik Politikası" data-en="Privacy Policy">Privacy Policy</a>
-                            </label>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-primary-500 hover:bg-primary-600 text-white font-bold py-4 rounded-xl transition-all transform hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 mt-4">
-                            <span data-tr="Başvuruyu Gönder" data-en="Submit Application">Submit Application</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
+        <svg class="seal" aria-hidden="true"><use href="#seal"/></svg>
+      </div>
     </div>
+  </section>
 
-    <!-- Success Toast -->
-    <div id="successToast" class="fixed bottom-4 right-4 bg-nature-500 text-white px-6 py-4 rounded-xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 z-[100] flex items-center gap-3">
-        <i class="fas fa-check-circle text-2xl"></i>
+  <!-- KÜNYE -->
+  <section class="kn" aria-label="Proje künyesi">
+    <div class="wrap">
+      <dl class="kn-grid reveal">
+        <div><dt data-i18n="kn.prog">Program</dt><dd data-i18n="kn.progV">Avrupa Dayanışma Programı · Dayanışma Projesi (ESC30)</dd></div>
+        <div><dt data-i18n="kunye.dur">Süre</dt><dd data-i18n="kn.durV">9 ay</dd></div>
+        <div><dt data-i18n="kunye.place">Yer</dt><dd>Gaziantep</dd></div>
+        <div><dt data-i18n="kn.target">Hedef grup</dt><dd data-i18n="kn.targetV">30 kişi, 18–30 yaş</dd></div>
+        <div><dt data-i18n="kn.team">Ekip</dt><dd data-i18n="kn.teamV">5 endüstri mühendisliği öğrencisi</dd></div>
+        <div><dt data-i18n="kunye.host">Yasal temsilci</dt><dd data-i18n="kunye.hostV">Gaziantep Üniversitesi</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 01 YAKLAŞIM -->
+  <section class="section" id="yaklasim">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow" data-i18n="s1.label">01 · Yaklaşım</span>
+        <h2 data-i18n-html="s1.title">Geri dönüşüm son çare. <em>Biz işe baştan başlıyoruz.</em></h2>
+        <p class="intro" data-i18n="s1.intro">Semt pazarlarında ve mutfaklarda plastik poşet ile streç film her gün, çoğu zaman düşünülmeden kullanılıyor. Atık yönetimi ise genellikle işin sonuna, geri dönüşüme odaklanıyor.</p>
+      </div>
+
+      <div class="approach-top">
+        <div class="prose reveal">
+          <p data-i18n-html="s1.p1">Geri dönüşüm; enerji, kaynak ve maliyet açısından ağır bir süreç. Bizim vizyonumuz <strong>atık oluşmadan önleme</strong>: plastik hiç kullanılmazsa, geri dönüşümün çevreye yüklediği yük de hiç oluşmaz.</p>
+          <p data-i18n="s1.p2">Endüstri mühendisliği öğrencileri olarak süreç analizi ve Agile yönetim gibi alanlarda öğrendiklerimizi toplumsal bir fayda için kullanıyoruz. Plastik kirliliği gibi küresel bir soruna, yerel ve geçmişten gelen yöntemleri geliştirerek çözüm üretmek ve bunu mutfakta kalıcı bir alışkanlığa dönüştürmek istiyoruz.</p>
+        </div>
+        <div class="fact reveal">
+          <span class="label" data-i18n="s1.factL">Plastiğin doğadaki ömrü</span>
+          <b data-i18n="s1.figure">20 yıldan binlerce yıla</b>
+          <span data-i18n="s1.figureCap">Plastiğin türüne göre doğada tamamen kaybolması için geçen süre.</span>
+        </div>
+      </div>
+
+      <div class="versus">
+        <article class="vs-card old reveal">
+          <header><span class="ib old-ib"><svg class="ic"><use href="#i-recycle"/></svg></span><h3 data-i18n="s1.cA">Geri dönüşüm</h3></header>
+          <ul class="vs-list">
+            <li><span class="mk"><svg class="ic"><use href="#i-x"/></svg></span><span data-i18n="s1.a1">Atık oluştuktan sonra devreye girer</span></li>
+            <li><span class="mk"><svg class="ic"><use href="#i-x"/></svg></span><span data-i18n="s1.a2">Toplama, ayrıştırma, tesis ve enerji ister</span></li>
+            <li><span class="mk"><svg class="ic"><use href="#i-x"/></svg></span><span data-i18n="s1.a3">Maliyeti yüksektir</span></li>
+            <li><span class="mk"><svg class="ic"><use href="#i-x"/></svg></span><span data-i18n="s1.a4">Streç film yine çöpe gider</span></li>
+          </ul>
+        </article>
+        <span class="vs-badge" data-i18n="s1.vs">ya da</span>
+        <article class="vs-card new reveal">
+          <header><span class="ib"><svg class="ic"><use href="#i-leaf"/></svg></span><h3 data-i18n="s1.cB">Atık oluşmadan önleme</h3></header>
+          <ul class="vs-list">
+            <li><span class="mk"><svg class="ic"><use href="#i-check"/></svg></span><span data-i18n="s1.b1">Atık oluşmadan önce devreye girer</span></li>
+            <li><span class="mk"><svg class="ic"><use href="#i-check"/></svg></span><span data-i18n="s1.b2">Tekrar kullanılabilir bir sargı ve yeni bir alışkanlık yeter</span></li>
+            <li><span class="mk"><svg class="ic"><use href="#i-check"/></svg></span><span data-i18n="s1.b3">Düşük maliyetlidir, evde üretilebilir</span></li>
+            <li><span class="mk"><svg class="ic"><use href="#i-check"/></svg></span><span data-i18n="s1.b4">Aynı kumaş tekrar tekrar kullanılır</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEDEFLER -->
+  <section class="section tint" id="hedefler">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow" data-i18n="goal.label">02 · Hedefler</span>
+        <h2 data-i18n-html="goal.title">Çevre, adalet <em>ve dayanışma.</em></h2>
+        <p class="intro" data-i18n="goal.intro">Projemiz tek bir ürünü değil, üç hedefi aynı anda taşıyor.</p>
+      </div>
+      <div class="goals">
+        <article class="goal card lift reveal"><span class="gnum">1</span><span class="ib leaf"><svg class="ic"><use href="#i-leaf"/></svg></span><span class="label" data-i18n="goal.g1l">Çevresel fayda</span><h3 data-i18n="goal.g1t">Mutfakta %40 daha az plastik</h3><p data-i18n="goal.g1p">Tek kullanımlık plastiği %40 azaltmak ve “atık oluşmadan önleme” fikrini kalıcı bir davranışa dönüştürmek.</p></article>
+        <article class="goal card lift reveal"><span class="gnum">2</span><span class="ib"><svg class="ic"><use href="#i-heart"/></svg></span><span class="label" data-i18n="goal.g2l">Ekonomik adalet</span><h3 data-i18n="goal.g2t">Herkesin ulaşabileceği doğal ürünler</h3><p data-i18n="goal.g2p">Doğal içerikli ürünleri evde düşük maliyetle üretilebilir kılarak sosyo-ekonomik açıdan dezavantajlı bireyler için erişilebilir hâle getirmek.</p></article>
+        <article class="goal card lift reveal"><span class="gnum">3</span><span class="ib"><svg class="ic"><use href="#i-comb"/></svg></span><span class="label" data-i18n="goal.g3l">Toplumsal dayanışma</span><h3 data-i18n="goal.g3t">Yerel arıcılarla ortak bir ağ</h3><p data-i18n="goal.g3p">Yerel arıcılarla iş birliği kurarak arıların ekosistemdeki önemine dikkat çekmek ve toplumsal dayanışmayı güçlendirmek.</p></article>
+      </div>
+
+      <div class="esc reveal">
+        <div class="esc-head">
+          <span class="ib"><svg class="ic"><use href="#i-spark"/></svg></span>
+          <div><h3 data-i18n="goal.escT">Avrupa Dayanışma Programı ile bağlantı</h3><p data-i18n="goal.escP">Gençlerin toplumsal sorunlara kendi fikirleriyle çözüm üretmesi, dayanışmayı güçlendirmesi ve sürdürülebilir etki yaratması projemizin çıkış noktası.</p></div>
+        </div>
+        <ul class="esc-list">
+          <li><span class="chip" data-i18n="goal.e1c">Kapsayıcılık ve çeşitlilik</span><p data-i18n="goal.e1">Hedef grubun merkezinde dezavantajlı bireyler var. Etkinlikler ortak alanlarda, ulaşım desteğiyle ve yalnızca üniversite çevresiyle sınırlı kalmadan yapılıyor.</p></li>
+          <li><span class="chip" data-i18n="goal.e2c">Çevre ve iklim</span><p data-i18n="goal.e2">Atık oluşmadan önleme yaklaşımıyla Avrupa Yeşil Mutabakatı'na ve AB'nin yeşil dönüşüm vizyonuna yerel düzeyde katkı.</p></li>
+          <li><span class="chip" data-i18n="goal.e3c">Dijital dönüşüm</span><p data-i18n="goal.e3">Web sitesi, Dijital Toolkit ve sosyal medya challenge'ı ile bilgiyi herkese açık ve kalıcı kılmak.</p></li>
+          <li><span class="chip" data-i18n="goal.e4c">Katılım ve aktif vatandaşlık</span><p data-i18n="goal.e4">Gençlerin yönetimden dijital içeriğe her aşamada aktif rol alarak kişisel, sosyal ve girişimcilik becerilerini geliştirmesi.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 BALMUMU KUMAŞ -->
+  <section class="section" id="balmumu">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow" data-i18n="s2.label">03 · Balmumu kumaş</span>
+        <h2 data-i18n-html="s2.title">İki yerel atıktan <em>bir alternatif.</em></h2>
+        <p class="intro" data-i18n="s2.intro">Balmumu kumaş, balmumu emdirilmiş pamuklu bir bez. Elin sıcaklığıyla şekil alır; kaseyi, ekmeği, peyniri sarar, yıkanıp yeniden kullanılır. Projede onu iki yerel atıktan üretiyoruz.</p>
+      </div>
+
+      <div class="process">
+        <article class="pstep card lift reveal">
+          <span class="ib"><svg class="ic"><use href="#i-comb"/></svg></span>
+          <span class="label" data-i18n="s2.n1l">Yerel arıcılar</span>
+          <h3 data-i18n="s2.n1t">Kullanılmayan petekler</h3>
+          <p data-i18n="s2.n1p">Üretimde işe yaramayan atık peteklerden balmumu elde edilir.</p>
+        </article>
+        <article class="pstep card lift reveal">
+          <span class="ib leaf"><svg class="ic"><use href="#i-scissors"/></svg></span>
+          <span class="label" data-i18n="s2.n2l">Terziler ve tekstil atölyeleri</span>
+          <h3 data-i18n="s2.n2t">Artan kumaş parçaları</h3>
+          <p data-i18n="s2.n2p">Yeni kumaş almak yerine atölyelerde artan pamuklu parçalar kullanılır.</p>
+        </article>
+        <article class="pstep card lift reveal">
+          <span class="ib"><svg class="ic"><use href="#i-iron"/></svg></span>
+          <span class="label" data-i18n="s2.n3l">Atölye · Ay 6</span>
+          <h3 data-i18n="s2.n3t">Ütüleme, fırınlama ya da daldırma</h3>
+          <p data-i18n="s2.n3p">Teknik arıcıyla birlikte seçilir; katılımcılar kendi kumaşlarını üretir.</p>
+        </article>
+        <article class="pstep card lift final reveal">
+          <span class="ib ink"><svg class="ic"><use href="#i-bowl"/></svg></span>
+          <span class="label" data-i18n="s2.n4l">Mutfak</span>
+          <h3 data-i18n="s2.n4t">Tekrar kullanılabilir sargı</h3>
+          <p data-i18n="s2.n4p">Streç filmin ve plastik poşetin yerini alır. Eskidiğinde yeniden mumlanabilir.</p>
+        </article>
+      </div>
+
+      <div class="traits">
+        <div class="trait card reveal"><span class="ib sm"><svg class="ic"><use href="#i-home"/></svg></span><div><h3 data-i18n="s2.t1">Üretilebilir</h3><p data-i18n="s2.t1p">Evde, basit malzemelerle yapılabilir.</p></div></div>
+        <div class="trait card reveal"><span class="ib sm"><svg class="ic"><use href="#i-loop"/></svg></span><div><h3 data-i18n="s2.t2">Tekrar kullanılabilir</h3><p data-i18n="s2.t2p">Yıkanır, kurur, yeniden kullanılır.</p></div></div>
+        <div class="trait card reveal"><span class="ib sm"><svg class="ic"><use href="#i-heart"/></svg></span><div><h3 data-i18n="s2.t3">Düşük maliyetli</h3><p data-i18n="s2.t3p">Atık malzemeden üretildiği için ucuzdur ve “ekolojik yaşam pahalıdır” algısını yıkar.</p></div></div>
+        <div class="trait card reveal"><span class="ib sm leaf"><svg class="ic"><use href="#i-leaf"/></svg></span><div><h3 data-i18n="s2.t4">Doğal</h3><p data-i18n="s2.t4p">İnsan sağlığına ve çevreye zarar vermeyen bir alternatif.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 KİMLER İÇİN -->
+  <section class="section tint" id="kimler">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow" data-i18n="s3.label">04 · Kimler için</span>
+        <h2 data-i18n-html="s3.title">Gaziantep'te, <em>mutfağı olan herkes için.</em></h2>
+        <p class="intro" data-i18n="s3.intro">Projenin merkezinde 9 ay boyunca birlikte çalışacağımız 30 kişilik bir grup var. Atölyeler ve final semineri yerel halka da açık olacak.</p>
+      </div>
+
+      <div class="audience">
+        <div class="who-card card reveal">
+          <div class="who-top">
+            <div class="who-seal"><svg aria-hidden="true"><use href="#seal-base"/></svg><b>30</b></div>
+            <p data-i18n-html="s3.cap">kişilik çekirdek grup, <em>18–30 yaş arası</em></p>
+          </div>
+          <ul class="groups">
+            <li><span class="ib sm"><svg class="ic"><use href="#i-users"/></svg></span><span data-i18n="s3.g1">Sosyo-ekonomik açıdan dezavantajlı bireyler</span></li>
+            <li><span class="ib sm leaf"><svg class="ic"><use href="#i-home"/></svg></span><span data-i18n="s3.g2">Ev hanımları</span></li>
+            <li><span class="ib sm"><svg class="ic"><use href="#i-book"/></svg></span><span data-i18n="s3.g3">Öğrenci evinde kalan üniversite öğrencileri</span></li>
+          </ul>
+        </div>
+        <div class="access">
+          <div class="acc card lift reveal"><span class="ib"><svg class="ic"><use href="#i-users"/></svg></span><h3 data-i18n="s3.a1t">Yalnızca üniversite değil</h3><p data-i18n="s3.a1">Eğitimler üniversite çevresiyle sınırlı kalmaz; yerel halk da sürece dahil edilir.</p></div>
+          <div class="acc card lift reveal"><span class="ib leaf"><svg class="ic"><use href="#i-bus"/></svg></span><h3 data-i18n="s3.a2t">Ulaşım desteği</h3><p data-i18n="s3.a2">Etkinlikler kolay ulaşılabilen ortak alanlarda yapılır; belirlenen toplanma noktalarından ulaşım sağlanır.</p></div>
+          <div class="acc card lift reveal"><span class="ib leaf"><svg class="ic"><use href="#i-play"/></svg></span><h3 data-i18n="s3.a3t">Açık dijital içerik</h3><p data-i18n="s3.a3">Videolar, görseller ve rehberler bu sitede ücretsiz yayınlanır.</p></div>
+          <div class="acc card lift reveal"><span class="ib"><svg class="ic"><use href="#i-home"/></svg></span><h3 data-i18n="s3.a4t">Evde tekrar edilebilir</h3><p data-i18n="s3.a4">Atölyede öğrenilen her şey evde, düşük maliyetle yeniden yapılabilir.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 TAKVİM -->
+  <section class="section" id="takvim">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow" data-i18n="s4.label">05 · Takvim</span>
+        <h2 data-i18n-html="s4.title">Dokuz ay, <em>dört aşama.</em></h2>
+        <p class="intro" data-i18n="s4.intro">Hazırlık, uygulama, değerlendirme ve yaygınlaştırma. Her ayın sonunda kısa bir değerlendirme toplantısıyla planı gözden geçiriyoruz.</p>
+      </div>
+
+      <div class="phases reveal">
+        <span class="phase-chip"><i class="bar-prep"></i><span data-i18n="ph.prep">Hazırlık</span></span>
+        <span class="phase-chip"><i class="bar-impl"></i><span data-i18n="ph.impl">Uygulama</span></span>
+        <span class="phase-chip"><i class="bar-eval"></i><span data-i18n="ph.eval">Değerlendirme</span></span>
+        <span class="phase-chip"><i class="bar-diss"></i><span data-i18n="ph.diss">Yaygınlaştırma</span></span>
+        <span class="phase-chip"><i class="bar-cont"></i><span data-i18n="ph.cont">Sürekli</span></span>
+      </div>
+      <div class="gantt-card card reveal">
+        <div class="gantt-scroll" tabindex="0" role="region" aria-label="9 aylık faaliyet çizelgesi">
+          <div class="gantt">
+            <div class="g-corner"></div>
+            <div class="g-phase ph-prep" style="grid-column: span 2" data-i18n="ph.prep">Hazırlık</div>
+            <div class="g-phase ph-impl" style="grid-column: span 4" data-i18n="ph.impl">Uygulama</div>
+            <div class="g-phase ph-eval" style="grid-column: span 2" data-i18n="ph.eval">Değerlendirme</div>
+            <div class="g-phase ph-diss" data-i18n="ph.dissShort">Yaygınlaş­tırma</div>
+            <div class="g-corner label" data-i18n="g.head">Faaliyet / Ay</div>
+            <div class="g-month">1</div><div class="g-month">2</div><div class="g-month">3</div><div class="g-month">4</div><div class="g-month">5</div><div class="g-month">6</div><div class="g-month">7</div><div class="g-month">8</div><div class="g-month">9</div>
+            <div class="g-name" data-i18n="g.r1">Kick-off toplantısı ve planlama</div><div class="g-cell"><i class="g-bar bar-prep"></i></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div>
+            <div class="g-name row-alt" data-i18n="g.r2">Dijital altyapı ve tedarik</div><div class="g-cell row-alt"></div><div class="g-cell row-alt"><i class="g-bar bar-prep"></i></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div>
+            <div class="g-name" data-i18n="g.r3">Sosyal medya içerikleri</div><div class="g-cell" style="grid-column: span 9"><i class="g-bar bar-cont"></i></div>
+            <div class="g-name row-alt" data-i18n="g.r4">Saha tanıtımı ve katılımcı seçimi</div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"><i class="g-bar bar-impl"></i></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div>
+            <div class="g-name" data-i18n="g.r5">Arıcılık semineri</div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"><i class="g-bar bar-impl"></i></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div>
+            <div class="g-name row-alt" data-i18n="g.r6">Geri dönüşüm tesisi gezisi</div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"><i class="g-bar bar-impl"></i></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div>
+            <div class="g-name" data-i18n="g.r7">Balmumu ve balmumu kumaş atölyeleri</div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"><i class="g-bar bar-impl"></i></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div>
+            <div class="g-name row-alt" data-i18n="g.r8">#PLASTİKSİZHAYAT challenge</div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt" style="grid-column: span 3"><i class="g-bar bar-cont"></i></div><div class="g-cell row-alt"></div>
+            <div class="g-name" data-i18n="g.r9">İzleme ve veri toplama</div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"><i class="g-bar bar-eval"></i></div><div class="g-cell"></div><div class="g-cell"></div>
+            <div class="g-name row-alt" data-i18n="g.r10">Değerlendirme ve süreç iyileştirme</div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"></div><div class="g-cell row-alt"><i class="g-bar bar-eval"></i></div><div class="g-cell row-alt"></div>
+            <div class="g-name" data-i18n="g.r11">Yaygınlaştırma, Youthpass ve kapanış</div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"></div><div class="g-cell"><i class="g-bar bar-diss"></i></div>
+          </div>
+        </div>
+      </div>
+      <p class="scroll-hint" data-i18n="g.hint">← Çizelgeyi yana kaydırabilirsin →</p>
+
+      <div class="months">
+        <article class="month prep card reveal">
+          <div class="month-top"><span class="mnum">1</span><span class="chip leaf" data-i18n="ph.prep">Hazırlık</span></div>
+          <h3 data-i18n="m1.t">Kick-off toplantısı ve planlama</h3>
+          <p data-i18n="m1.p">Tüm paydaşlarla proje planını ve vizyonunu paylaştığımız açılış toplantısı.</p>
+          <ul>
+            <li data-i18n="m1.l1">Paydaşlar arasında iletişim kanallarının kurulması</li>
+            <li data-i18n="m1.l2">Doğa yürüyüşü ve beyin fırtınası sohbetleri gibi kaynaşma etkinlikleri</li>
+            <li data-i18n="m1.l3">Görevlerin netleştirilmesi; iş birlikçi ve uzman araştırması</li>
+            <li data-i18n="m1.l4">Gezi yapılacak tesislerle ilk bağlantılar</li>
+            <li data-i18n="m1.l5">Instagram, YouTube ve TikTok hesaplarının açılması</li>
+          </ul>
+        </article>
+        <article class="month prep card reveal">
+          <div class="month-top"><span class="mnum">2</span><span class="chip leaf" data-i18n="ph.prep">Hazırlık</span></div>
+          <h3 data-i18n="m2.t">Dijital altyapı ve tedarik</h3>
+          <ul>
+            <li data-i18n="m2.l1">İçerik senaryolarının kurgulanması ve challenge konularının belirlenmesi</li>
+            <li data-i18n="m2.l2">Web sitesinin kurulması; eğitici içerik ve duyuruların yüklenmesi</li>
+            <li data-i18n="m2.l3">Üniversite ve üniversite toplulukları ile bağlantı</li>
+            <li data-i18n="m2.l4">Yerel arıcılarla iş birliği toplantısı ve atölye planlaması</li>
+            <li data-i18n="m2.l5">Kumaş, reçine ve doğal yağ gibi malzemelerin maliyet analizi ve tedarik planı</li>
+          </ul>
+        </article>
+        <article class="month impl card reveal">
+          <div class="month-top"><span class="mnum">3</span><span class="chip wax" data-i18n="ph.impl">Uygulama</span></div>
+          <h3 data-i18n="m3.t">Saha tanıtımı ve katılımcı seçimi</h3>
+          <p data-i18n="m3.p">Gaziantep Üniversitesi'nde ve belirlenen noktalarda tanıtım standları kuruyoruz.</p>
+          <ul>
+            <li data-i18n="m3.l1">Plastiğin zararları ve sürdürülebilir alternatifler üzerine farkındalık</li>
+            <li data-i18n="m3.l2">18–30 yaş arası 30 kişilik hedef grubun kaydı</li>
+          </ul>
+        </article>
+        <article class="month impl card reveal">
+          <div class="month-top"><span class="mnum">4</span><span class="chip wax" data-i18n="ph.impl">Uygulama</span></div>
+          <h3 data-i18n="m4.t">Arıcılık semineri</h3>
+          <p data-i18n="m4.p">Profesyonel bir arıcı rehberliğinde, arıların ekolojik dengedeki ve sürdürülebilirlikteki rolü.</p>
+          <ul>
+            <li data-i18n="m4.l1">Plastik atığı azaltmaya yönelik doğal alternatifler</li>
+            <li data-i18n="m4.l2">Uzmanla interaktif soru-cevap</li>
+            <li data-i18n="m4.l3">Farkındalık düzeyini ölçen kısa değerlendirme</li>
+          </ul>
+        </article>
+        <article class="month impl card reveal">
+          <div class="month-top"><span class="mnum">5</span><span class="chip wax" data-i18n="ph.impl">Uygulama</span></div>
+          <h3 data-i18n="m5.t">Geri dönüşüm tesisi gezisi</h3>
+          <p data-i18n="m5.p">İş güvenliği önlemleri alınarak, katılmak isteyen katılımcılarla.</p>
+          <ul>
+            <li data-i18n="m5.l1">Saha görevlilerinden malzemelerin geri dönüşüm aşamaları</li>
+            <li data-i18n="m5.l2">Gezi sonunda atık dönüşüm formu ve “atık oluşmadan önleme” üzerine sohbet</li>
+            <li data-i18n="m5.l3">Gezi boyunca çekilen fotoğraf ve videolarla içerik üretimi</li>
+          </ul>
+        </article>
+        <article class="month impl card reveal">
+          <div class="month-top"><span class="mnum">6</span><span class="chip wax" data-i18n="ph.impl">Uygulama</span></div>
+          <h3 data-i18n="m6.t">Balmumu ve balmumu kumaş atölyeleri</h3>
+          <ul>
+            <li data-i18n="m6.l1">1. atölye: kullanılmayan peteklerden balmumu elde etme</li>
+            <li data-i18n="m6.l2">2. atölye: terzilerden artan kumaşlarla balmumu kumaş üretimi (fırınlama, ütüleme ya da daldırma)</li>
+            <li data-i18n="m6.l3">Faydalar, bakım ve hangi durumlarda kullanılmaması gerektiği</li>
+            <li data-i18n="m6.l4">#PLASTİKSİZHAYAT challenge'ının başlaması</li>
+          </ul>
+        </article>
+        <article class="month eval card reveal">
+          <div class="month-top"><span class="mnum">7</span><span class="chip" data-i18n="ph.eval">Değerlendirme</span></div>
+          <h3 data-i18n="m7.t">İzleme ve veri toplama</h3>
+          <ul>
+            <li data-i18n="m7.l1">İki 7 günlük takip formunun karşılaştırılması</li>
+            <li data-i18n="m7.l2">Sonuçların katılımcılar ve proje koçu ile açık bir değerlendirme çemberinde incelenmesi</li>
+            <li data-i18n="m7.l3">Web sitesi erişimi, sosyal medya etkileşimi ve challenge geri dönüşlerinin takibi</li>
+          </ul>
+        </article>
+        <article class="month eval card reveal">
+          <div class="month-top"><span class="mnum">8</span><span class="chip" data-i18n="ph.eval">Değerlendirme</span></div>
+          <h3 data-i18n="m8.t">Değerlendirme ve süreç iyileştirme</h3>
+          <ul>
+            <li data-i18n="m8.l1">Web sitesindeki bilgi testi, atölye değerlendirme formları ve bireysel geri bildirimlerin analizi</li>
+            <li data-i18n="m8.l2">Ölçütler: katılımcı memnuniyeti, katılım sürekliliği, çevresel etki</li>
+            <li data-i18n="m8.l3">Agile yaklaşımıyla kısa geri bildirim döngüleri ve yazılı iç rapor</li>
+          </ul>
+        </article>
+        <article class="month diss card reveal">
+          <div class="month-top"><span class="mnum">9</span><span class="chip ink" data-i18n="ph.diss">Yaygınlaştırma</span></div>
+          <h3 data-i18n="m9.t">Yaygınlaştırma, Youthpass ve kapanış</h3>
+          <ul>
+            <li data-i18n="m9.l1">Genel proje raporu</li>
+            <li data-i18n="m9.l2">Tüm video ve rehberlerin Dijital Toolkit'te açık erişimle yayını</li>
+            <li data-i18n="m9.l3">Yerel paydaşlar, üniversite toplulukları ve gençlik gruplarıyla kapanış semineri</li>
+            <li data-i18n="m9.l4">Katılımcı ve ekip yetkinliklerinin Youthpass ile belgelenmesi</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 ETKİNLİKLER -->
+  <section class="section tint" id="etkinlikler">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow" data-i18n="s5.label">06 · Etkinlikler</span>
+        <h2 data-i18n-html="s5.title">Dinle, gör, <em>kendin yap.</em></h2>
+        <p class="intro" data-i18n="s5.intro">Seminerden başlayıp kendi kumaşını ürettiğin atölyeye, oradan da sonuçları birlikte paylaştığımız kapanışa.</p>
+      </div>
+
+      <ol class="tl">
+        <li class="reveal">
+          <span class="dot"><svg class="ic"><use href="#i-seminar"/></svg></span>
+          <article class="ev card lift">
+            <div>
+              <div class="meta"><span class="chip wax" data-i18n="m.4">Ay 4</span><span class="chip" data-i18n="e1.k">Arıcılık semineri</span></div>
+              <h3 data-i18n="e1.t">Arıların sürdürülebilirlikteki rolü</h3>
+              <p data-i18n="e1.p">Profesyonel bir arıcı, arıların ekolojik dengeyi korumadaki yerini ve plastiğe doğal alternatifleri anlatıyor. Seminer, uzmanla interaktif bir soru-cevapla bitiyor.</p>
+            </div>
+            <div class="out"><span class="label" data-i18n="e.out">Çıktı</span><ul><li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="e1.o1">Arı, ekosistem ve plastik arasındaki bağa dair ortak bir zemin</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="e1.o2">Atölyelere hazırlık</span></li></ul></div>
+          </article>
+        </li>
+        <li class="reveal">
+          <span class="dot"><svg class="ic"><use href="#i-factory"/></svg></span>
+          <article class="ev card lift">
+            <div>
+              <div class="meta"><span class="chip wax" data-i18n="m.5">Ay 5</span><span class="chip" data-i18n="e2.k">Tesis gezisi</span></div>
+              <h3 data-i18n="e2.t">Geri dönüşüm tesisinde bir gün</h3>
+              <p data-i18n="e2.p">Bir plastik poşetin geri dönüşümde nelerden geçtiğini yerinde görüyoruz. Gezi, iş güvenliği önlemleri alınarak ve katılmak isteyenlerle yapılıyor.</p>
+            </div>
+            <div class="out"><span class="label" data-i18n="e.out">Çıktı</span><ul><li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="e2.o1">Atık dönüşüm formu</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="e2.o2">Geri dönüşümün neden zor olduğu üzerine sohbet</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="e2.o3">Gezi içerikleri</span></li></ul></div>
+          </article>
+        </li>
+        <li class="reveal">
+          <span class="dot"><svg class="ic"><use href="#i-comb"/></svg></span>
+          <article class="ev card lift">
+            <div>
+              <div class="meta"><span class="chip wax" data-i18n="m.6">Ay 6</span><span class="chip" data-i18n="e3.k">Atölye 1</span></div>
+              <h3 data-i18n="e3.t">Petekten balmumuna</h3>
+              <p data-i18n="e3.p">Yerel arıcılardan gelen kullanılmayan peteklerden balmumu elde ediyoruz. İkinci atölyenin hammaddesi burada hazırlanıyor.</p>
+            </div>
+            <div class="out"><span class="label" data-i18n="e.out">Çıktı</span><ul><li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="e3.o1">Süzülmüş, kullanıma hazır balmumu</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="e3.o2">Güvenli eritme ve süzme pratiği</span></li></ul></div>
+          </article>
+        </li>
+        <li class="reveal">
+          <span class="dot"><svg class="ic"><use href="#i-iron"/></svg></span>
+          <article class="ev card lift">
+            <div>
+              <div class="meta"><span class="chip wax" data-i18n="m.6">Ay 6</span><span class="chip" data-i18n="e4.k">Atölye 2</span></div>
+              <h3 data-i18n="e4.t">Balmumu kumaş atölyesi</h3>
+              <p data-i18n="e4.p">Terzilerden ve tekstil atölyelerinden artan kumaşları balmumuyla kaplıyoruz. Teknik, arıcıyla birlikte fırınlama, ütüleme ve daldırma arasından seçiliyor. Atölye sonunda faydalar ve hangi durumlarda kullanılmaması gerektiği anlatılıyor.</p>
+            </div>
+            <div class="out"><span class="label" data-i18n="e.out">Çıktı</span><ul><li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="e4.o1">Her katılımcının kendi ürettiği kumaşlar</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="e4.o2">Kullanım ve bakım bilgisi</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="e4.o3">#PLASTİKSİZHAYAT'ın başlangıcı</span></li></ul></div>
+          </article>
+        </li>
+        <li class="reveal">
+          <span class="dot"><svg class="ic"><use href="#i-flag"/></svg></span>
+          <article class="ev card lift">
+            <div>
+              <div class="meta"><span class="chip ink" data-i18n="m.9">Ay 9</span><span class="chip" data-i18n="e5.k">Kapanış</span></div>
+              <h3 data-i18n="e5.t">Kapanış ve yaygınlaştırma semineri</h3>
+              <p data-i18n="e5.p">Sonuçları yerel paydaşlar, üniversite toplulukları, gençlik grupları ve ilgili kurumlarla paylaşıyoruz. Katılımcılar deneyimlerini kendileri anlatıyor.</p>
+            </div>
+            <div class="out"><span class="label" data-i18n="e.out">Çıktı</span><ul><li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="e5.o1">Etki raporu</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="e5.o2">Youthpass sertifikaları</span></li><li><svg class="ic"><use href="#i-check"/></svg><span data-i18n="e5.o3">Herkese açık Dijital Toolkit</span></li></ul></div>
+          </article>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 06 ÖLÇÜM -->
+  <section class="section" id="olcum">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow" data-i18n="s6.label">07 · Ölçüm</span>
+        <h2 data-i18n-html="s6.title">%40'ı <em>nasıl ölçeceğiz?</em></h2>
+        <p class="intro" data-i18n="s6.intro">Hedefimiz, katılımcıların mutfaklarında haftalık tek kullanımlık plastik kullanımını %40 azaltmak. Bunu tahminle değil, iki ayrı 7 günlük takip formuyla ölçüyoruz.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step card reveal"><span class="n">01</span><h3 data-i18n="s6.s1">Başlangıç formu</h3><p data-i18n="s6.s1p">Katılımcılar balmumu kumaşı kullanmaya başlamadan önce, bir hafta boyunca kullandıkları plastik poşet ve streç filmi her gün not eder.</p></li>
+        <li class="step card reveal"><span class="n">02</span><h3 data-i18n="s6.s2">Balmumu kumaşla yaşam</h3><p data-i18n="s6.s2p">Atölyede üretilen kumaşlar mutfakta plastiğin yerini almaya başlar.</p></li>
+        <li class="step card reveal"><span class="n">03</span><h3 data-i18n="s6.s3">İkinci form</h3><p data-i18n="s6.s3p">Aynı form bir hafta daha doldurulur; bu kez balmumu kumaşın kaç kez kullanıldığı da yazılır.</p></li>
+        <li class="step card reveal"><span class="n">04</span><h3 data-i18n="s6.s4">Karşılaştırma</h3><p data-i18n="s6.s4p">Haftalık adetler arasındaki fark hesaplanır. Sonuçlar, katılımcılar ve proje koçuyla birlikte açık bir değerlendirme çemberinde konuşulur ve etki raporuna dönüşür.</p></li>
+      </ol>
+
+      <div class="measure">
+        <figure class="formcard card reveal">
+          <div class="formcard-head">
+            <h3 data-i18n="s6.formT">7 Günlük Plastik Kullanımı Takip Formu</h3>
+            <span class="chip wax" data-i18n="s6.formL">Örnek · 2. form</span>
+          </div>
+          <table class="sheet">
+            <thead>
+              <tr><th></th><th data-i18n="d.1">Pzt</th><th data-i18n="d.2">Sal</th><th data-i18n="d.3">Çar</th><th data-i18n="d.4">Per</th><th data-i18n="d.5">Cum</th><th data-i18n="d.6">Cmt</th><th data-i18n="d.7">Paz</th><th data-i18n="d.sum">Top.</th></tr>
+            </thead>
+            <tbody>
+              <tr><td data-i18n="r.bag">Plastik poşet</td><td class="hand">1</td><td class="hand">0</td><td class="hand">2</td><td class="hand">0</td><td class="hand">1</td><td class="hand">0</td><td class="hand">1</td><td class="tot">5</td></tr>
+              <tr><td data-i18n="r.film">Streç film</td><td class="hand">0</td><td class="hand">1</td><td class="hand">0</td><td class="hand">0</td><td class="hand">0</td><td class="hand">1</td><td class="hand">0</td><td class="tot">2</td></tr>
+              <tr class="wax-row"><td data-i18n="r.wax">Balmumu kumaş kullanımı</td><td class="hand">2</td><td class="hand">3</td><td class="hand">1</td><td class="hand">2</td><td class="hand">3</td><td class="hand">2</td><td class="hand">2</td><td class="tot">15</td></tr>
+            </tbody>
+          </table>
+          <figcaption class="note" data-i18n-html="s6.note">Değerler örnektir. Formu <a href="toolkit.html#takip-formu">Dijital Toolkit</a>'te çevrim içi doldurabilir ya da yazdırabilirsin.</figcaption>
+        </figure>
+
+        <ul class="indicators">
+          <li class="ind card reveal"><span class="ib"><svg class="ic"><use href="#i-chart"/></svg></span><div><h3 data-i18n="s6.i1">Davranış değişimi</h3><p data-i18n="s6.i1p">Takip formları, anketler ve Ay 7'deki değerlendirme çemberi.</p></div></li>
+          <li class="ind card reveal"><span class="ib leaf"><svg class="ic"><use href="#i-play"/></svg></span><div><h3 data-i18n="s6.i2">Dijital erişim</h3><p data-i18n="s6.i2p">Web sitesi ziyaretleri, video izlenmeleri ve sosyal medya etkileşimi.</p></div></li>
+          <li class="ind card reveal"><span class="ib"><svg class="ic"><use href="#i-spark"/></svg></span><div><h3 data-i18n="s6.i3">Öğrenme</h3><p data-i18n="s6.i3p">Atölye değerlendirme formları, sitedeki bilgi testi ve Youthpass öz değerlendirmesi.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 CHALLENGE -->
+  <section class="section challenge" id="challenge">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow" data-i18n="s7.label">08 · Challenge</span>
+        <h2 data-i18n-html="s7.title">Balmumu kumaşın <em>kaç kullanımı var?</em></h2>
+        <p class="intro" data-i18n="s7.intro">Ay 6'da başlayan sosyal medya challenge'ında herkes balmumu kumaşı ne kadar farklı yerde kullanabildiğini gösteriyor.</p>
+      </div>
+      <p class="hashtag reveal">#PLASTİKSİZHAYAT</p>
+      <ol class="ch-steps">
+        <li class="reveal"><span class="ib"><svg class="ic"><use href="#i-iron"/></svg></span><span class="label" data-i18n="s7.st1">Adım 1</span><h3 data-i18n="s7.h1">Kumaşını yap</h3><p data-i18n-html="s7.p1">Atölyede ya da <a href="toolkit.html#balmumu-kumas">Toolkit'teki rehberle</a> evde.</p></li>
+        <li class="reveal"><span class="ib"><svg class="ic"><use href="#i-camera"/></svg></span><span class="label" data-i18n="s7.st2">Adım 2</span><h3 data-i18n="s7.h2">Kullanırken çek</h3><p data-i18n="s7.p2">Mutfakta, çantada, piknikte: plastiğin yerine geçtiği her an.</p></li>
+        <li class="reveal"><span class="ib"><svg class="ic"><use href="#i-hash"/></svg></span><span class="label" data-i18n="s7.st3">Adım 3</span><h3 data-i18n="s7.h3">Etiketle paylaş</h3><p data-i18n="s7.p3">Videonu #PLASTİKSİZHAYAT etiketiyle paylaş; biz de hesaplarımızdan yeniden paylaşalım.</p></li>
+      </ol>
+      <div class="ch-prize reveal">
+        <span class="ib"><svg class="ic"><use href="#i-gift"/></svg></span>
+        <div><strong data-i18n="s7.prize">Ödül</strong><span data-i18n="s7.prizeP">En yüksek etkileşimi alan videoya sürdürülebilirlik temelli bir teşvik ödülü verilecek.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ETKİ -->
+  <section class="section tint" id="etki">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow" data-i18n="imp.label">09 · Etki ve kalıcılık</span>
+        <h2 data-i18n-html="imp.title">Proje bittiğinde <em>ne kalacak?</em></h2>
+        <p class="intro" data-i18n="imp.intro">Dokuz ayın sonunda amacımız yalnızca bir rapor değil; kendi kendine süren bir alışkanlık ve yerel bir döngü.</p>
+      </div>
+      <div class="impact">
+        <div class="imp-col card wax reveal">
+          <h3 data-i18n="imp.aT">Kalıcılık</h3>
+          <p data-i18n="imp.aP">Proje sona erdikten sonra da süren etkiler.</p>
+          <ul class="ilist">
+            <li><span class="ib sm"><svg class="ic"><use href="#i-comb"/></svg></span><span><b data-i18n="imp.a1t">Yerel balmumu döngüsü</b><span class="t" data-i18n="imp.a1">Gençlerin proje bittikten sonra da yerel arıcılardan balmumu alabileceği bir döngü kurmayı hedefliyoruz.</span></span></li>
+            <li><span class="ib sm"><svg class="ic"><use href="#i-book"/></svg></span><span><b data-i18n="imp.a2t">Açık kalan içerik</b><span class="t" data-i18n="imp.a2">Eğitici videolar, görseller ve rehberler bu sitede herkese açık kalmaya devam eder.</span></span></li>
+            <li><span class="ib sm"><svg class="ic"><use href="#i-iron"/></svg></span><span><b data-i18n="imp.a3t">Kalıcı beceri</b><span class="t" data-i18n="imp.a3">Balmumu kumaş yapımı gibi pratik beceriler, plastik kullanımını uzun vadede azaltır.</span></span></li>
+            <li><span class="ib sm"><svg class="ic"><use href="#i-heart"/></svg></span><span><b data-i18n="imp.a4t">Ekonomik tasarruf</b><span class="t" data-i18n="imp.a4">Doğal mutfak ürünlerini düşük maliyetle üretmek, dezavantajlı hanelere kalıcı bir tasarruf yöntemi sağlar.</span></span></li>
+          </ul>
+        </div>
+        <div class="imp-col card reveal">
+          <h3 data-i18n="imp.bT">Görünürlük ve yaygınlaştırma</h3>
+          <p data-i18n="imp.bP">Sonuçları projeye dahil olmayanlarla nasıl paylaşacağız?</p>
+          <ul class="ilist">
+            <li><span class="ib sm leaf"><svg class="ic"><use href="#i-camera"/></svg></span><span><b data-i18n="imp.b1t">Sosyal medya</b><span class="t" data-i18n="imp.b1">Instagram, YouTube ve TikTok'ta düzenli içerik ve #PLASTİKSİZHAYAT challenge'ı.</span></span></li>
+            <li><span class="ib sm leaf"><svg class="ic"><use href="#i-megaphone"/></svg></span><span><b data-i18n="imp.b2t">Tanıtım standları</b><span class="t" data-i18n="imp.b2">Üniversitelerde ve belirlenen stratejik noktalarda; afiş ve üniversite iletişim kanallarıyla.</span></span></li>
+            <li><span class="ib sm leaf"><svg class="ic"><use href="#i-chart"/></svg></span><span><b data-i18n="imp.b3t">Sosyal kanıt raporları</b><span class="t" data-i18n="imp.b3">%40 hedefine ilişkin sonuçlar, anketler ve geri bildirimler sosyal medyada paylaşılır.</span></span></li>
+            <li><span class="ib sm leaf"><svg class="ic"><use href="#i-flag"/></svg></span><span><b data-i18n="imp.b4t">Final semineri</b><span class="t" data-i18n="imp.b4">Yerel paydaşlar, üniversite toplulukları, gençlik grupları ve yerel halka açık kapanış semineri.</span></span></li>
+            <li><span class="ib sm leaf"><svg class="ic"><use href="#i-spark"/></svg></span><span><b data-i18n="imp.b5t">Youthpass</b><span class="t" data-i18n="imp.b5">Katılımcıların sertifikaları, projenin kurumsal ve akademik çevrelerdeki görünürlüğünü artırır.</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 KENDİ KURALLARIMIZ -->
+  <section class="section" id="kurallar">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow" data-i18n="s8.label">10 · Kendi kurallarımız</span>
+        <h2 data-i18n-html="s8.title">Söylediğimizi <em>önce kendimiz yapıyoruz.</em></h2>
+        <p class="intro" data-i18n="s8.intro">Sürdürülebilirlik bu projede bir slogan değil; organizasyonun kendisine de uyguladığımız bir yöntem.</p>
+      </div>
+      <ul class="rules">
+        <li class="rule card lift reveal"><span class="ib"><svg class="ic"><use href="#i-bottle"/></svg></span><div><h3 data-i18n="s8.r1">Matara ve kupa</h3><p data-i18n="s8.r1p">Toplantılarda tek kullanımlık plastik ya da kâğıt bardak yok; herkes kendi matarasını getiriyor.</p></div></li>
+        <li class="rule card lift reveal"><span class="ib leaf"><svg class="ic"><use href="#i-scissors"/></svg></span><div><h3 data-i18n="s8.r2">Artık kumaş</h3><p data-i18n="s8.r2p">Atölyelerde yeni kumaş yerine terzilerden ve tekstil atölyelerinden artan parçalar.</p></div></li>
+        <li class="rule card lift reveal"><span class="ib"><svg class="ic"><use href="#i-bag"/></svg></span><div><h3 data-i18n="s8.r3">Kendi kabın</h3><p data-i18n="s8.r3p">Katılımcıları kendi bez çantalarını ve saklama kaplarını getirmeye teşvik ediyoruz.</p></div></li>
+        <li class="rule card lift reveal"><span class="ib leaf"><svg class="ic"><use href="#i-qr"/></svg></span><div><h3 data-i18n="s8.r4">Az baskı</h3><p data-i18n="s8.r4p">Basılı materyal yerine QR kodlu dijital içerik; gerektiğinde geri dönüştürülmüş kâğıt.</p></div></li>
+        <li class="rule card lift reveal"><span class="ib"><svg class="ic"><use href="#i-megaphone"/></svg></span><div><h3 data-i18n="s8.r5">Dijital duyuru</h3><p data-i18n="s8.r5p">Etkinlik duyuruları dijital kanallardan yapılıyor.</p></div></li>
+        <li class="rule card lift reveal"><span class="ib leaf"><svg class="ic"><use href="#i-book"/></svg></span><div><h3 data-i18n="s8.r6">Kalıcı bilgi</h3><p data-i18n="s8.r6p">Dijital Toolkit, proje bittikten sonra da herkese açık kalıyor.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 09 EKİP -->
+  <section class="section tint" id="ekip">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow" data-i18n="s9.label">11 · Ekip</span>
+        <h2 data-i18n-html="s9.title">Beş kişi, <em>tek mutfak.</em></h2>
+        <p class="intro" data-i18n="s9.intro">Endüstri mühendisliği öğrencileri olarak süreç analizi, veri ve planlama becerilerimizi mahallemizin mutfağına taşıyoruz.</p>
+      </div>
+      <div class="team">
+        <article class="member card lift reveal">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-base"/><text x="50" y="59" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="27" fill="#5a3a05">SA</text></svg>
+          <h3>Selin Aksu</h3><span class="chip wax role" data-i18n="t1.r">Genel Koordinatör</span>
+          <p data-i18n="t1.p">Agile süreç yönetimine liderlik ediyor; faaliyet takvimini ve ekip koordinasyonunu yürütüyor. Kick-off toplantısını ve Youthpass sürecini yönetiyor.</p>
+        </article>
+        <article class="member card lift reveal">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-base"/><text x="50" y="59" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="27" fill="#5a3a05">IG</text></svg>
+          <h3>Işıl Genç</h3><span class="chip wax role" data-i18n="t2.r">İletişim ve Lojistik Koordinatörü</span>
+          <p data-i18n="t2.p">Arıcılarla hammadde bağlantısını, tesis gezilerinin izin ve planlamasını, atölye malzemelerini ve maliyet analizlerini yürütüyor.</p>
+        </article>
+        <article class="member card lift reveal">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-base"/><text x="50" y="59" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="27" fill="#5a3a05">ZH</text></svg>
+          <h3>Zarif Hişmioğulları</h3><span class="chip wax role" data-i18n="t3.r">Dijital Strateji ve İçerik Koordinatörü</span>
+          <p data-i18n="t3.p">Atölyeleri ve sıfır atık uygulamalarını sosyal medya kampanyalarına, video serilerine ve Dijital Toolkit'e dönüştürüyor.</p>
+        </article>
+        <article class="member card lift reveal">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-base"/><text x="50" y="59" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="27" fill="#5a3a05">AP</text></svg>
+          <h3>Alperen Pekdemir</h3><span class="chip wax role" data-i18n="t4.r">Teknik Altyapı ve Dijitalleştirme Sorumlusu</span>
+          <p data-i18n="t4.p">Web sitesini ve eğitim içeriklerinin saklandığı dijital altyapıyı kuruyor; bilgiye erişimin hızlı ve kesintisiz olmasını sağlıyor.</p>
+        </article>
+        <article class="member card lift reveal">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-base"/><text x="50" y="59" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="27" fill="#5a3a05">BÇ</text></svg>
+          <h3>Beyza Çelik</h3><span class="chip wax role" data-i18n="t5.r">Katılımcı İlişkileri ve Mentörlük Sorumlusu</span>
+          <p data-i18n="t5.p">Katılımcılarla birebir iletişim kuruyor, motivasyonu koruyor ve geri bildirimleri süreç iyileştirmeye taşıyor.</p>
+        </article>
+      </div>
+      <div class="host card reveal">
+        <span class="ib ink"><svg class="ic"><use href="#i-uni"/></svg></span>
         <div>
-            <div class="font-bold" data-tr="Başvurunuz Alındı!" data-en="Application Received!">Application Received!</div>
-            <div class="text-sm text-nature-100" data-tr="En kısa sürede size dönüş yapacağız." data-en="We will contact you as soon as possible.">We will contact you as soon as possible.</div>
+          <strong data-i18n="kunye.hostV">Gaziantep Üniversitesi</strong>
+          <span data-i18n="s9.host">Projenin yasal temsilcisi. Gençlik projeleri, gönüllülük ve Avrupa Dayanışma Programı projelerindeki deneyimiyle idari ve akademik destek sağlıyor.</span>
         </div>
+      </div>
+      <div class="subhead reveal">
+        <h3 data-i18n="mg.t">Projeyi nasıl yöneteceğiz?</h3>
+        <p data-i18n="mg.p">Görev dağılımı, düzenli iletişim ve süreç takibi; endüstri mühendisliği temelli Agile bir yaklaşımla.</p>
+      </div>
+      <div class="manage">
+        <div class="mg card reveal"><span class="ib"><svg class="ic"><use href="#i-users"/></svg></span><h4 data-i18n="mg.m1t">Görev dağılımı</h4><p data-i18n="mg.m1">Kick-off toplantısında koordinasyon, uygulama, katılımcı ilişkileri, yaygınlaştırma ve raporlama sorumlulukları netleşir.</p></div>
+        <div class="mg card reveal"><span class="ib leaf"><svg class="ic"><use href="#i-loop"/></svg></span><h4 data-i18n="mg.m2t">Aylık değerlendirme</h4><p data-i18n="mg.m2">Her ayın sonunda kısa bir toplantıyla planlanan ve gerçekleşen karşılaştırılır; olası gecikmeler önceden fark edilir.</p></div>
+        <div class="mg card reveal"><span class="ib"><svg class="ic"><use href="#i-chart"/></svg></span><h4 data-i18n="mg.m3t">Bütçe takibi</h4><p data-i18n="mg.m3">Harcamalar maliyet analizine göre yürütülür; her harcama kayıt altına alınır ve bir faaliyetle ilişkilendirilir.</p></div>
+        <div class="mg card reveal"><span class="ib leaf"><svg class="ic"><use href="#i-megaphone"/></svg></span><h4 data-i18n="mg.m4t">İletişim</h4><p data-i18n="mg.m4">WhatsApp, e-posta ve çevrim içi toplantılarla hızlı karar; katılımcı geri bildirimleri sürece düzenli olarak eklenir.</p></div>
+      </div>
+      <div class="learn card reveal">
+        <div>
+          <h4 data-i18n="lr.t">Biz ne öğreneceğiz?</h4>
+          <p data-i18n="lr.p">Sürdürülebilir üretim ve tüketim, doğal alternatiflerin yerelde yaygınlaştırılması, ekip çalışması, zaman ve bütçe yönetimi. Öğrendiklerimizi Agile değerlendirme toplantılarında düzenli olarak konuşacak, 8 anahtar yetkinliği öz değerlendirmeyle kaydedip Youthpass ile belgeleyeceğiz.</p>
+        </div>
+        <div class="chips">
+          <span class="chip wax" data-i18n="lr.c1">Girişimcilik</span>
+          <span class="chip leaf" data-i18n="lr.c2">Dijital okuryazarlık</span>
+          <span class="chip wax" data-i18n="lr.c3">Zaman yönetimi</span>
+          <span class="chip leaf" data-i18n="lr.c4">Sosyal sorumluluk</span>
+          <span class="chip ink">Youthpass</span>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <script>
-        // Language Management - DEFAULT LANGUAGE SET TO ENGLISH
-        let currentLang = 'en';
-        try { currentLang = localStorage.getItem('language') || 'en'; } catch(e) {}
-        
-        function toggleLanguage() {
-            currentLang = currentLang === 'tr' ? 'en' : 'tr';
-            try { localStorage.setItem('language', currentLang); } catch(e) {}
-            applyLanguage();
-            updateActiveButton();
-        }
+  <!-- 10 KATIL -->
+  <section class="section" id="katil">
+    <div class="wrap">
+      <div class="join-panel reveal">
+        <div>
+          <span class="eyebrow" data-i18n="s10.label">12 · Katıl</span>
+          <h2 data-i18n-html="s10.title">Değişime <em>mutfağından başla.</em></h2>
+          <p class="lede" data-i18n="s10.lede">18–30 yaş arasındaysan ve Gaziantep'te yaşıyorsan, 9 ay boyunca seminere, tesis gezisine ve atölyelere bizimle katılabilirsin. Kazandığın yetkinlikler Youthpass ile belgelenir.</p>
+          <a class="btn btn-ink" id="apply-btn" href="#katil" aria-disabled="true"><span data-i18n="s10.btnSoon">Kayıtlar Ay 3'te açılacak</span></a>
+          <p class="join-status" id="apply-note" data-i18n="s10.soon">Kayıtlar, tanıtım standlarıyla birlikte bu sayfadan duyurulacak.</p>
+        </div>
+        <dl class="join-meta">
+          <div><span class="ib sm"><svg class="ic"><use href="#i-users"/></svg></span><span><dt data-i18n="s10.k1">Kimler</dt><dd data-i18n="s10.v1">18–30 yaş, Gaziantep</dd></span></div>
+          <div><span class="ib sm leaf"><svg class="ic"><use href="#i-comb"/></svg></span><span><dt data-i18n="s10.k2">Kontenjan</dt><dd data-i18n="s10.v2">30 kişi</dd></span></div>
+          <div><span class="ib sm"><svg class="ic"><use href="#i-bus"/></svg></span><span><dt data-i18n="s10.k3">Ulaşım</dt><dd data-i18n="s10.v3">Toplanma noktalarından destek</dd></span></div>
+          <div><span class="ib sm leaf"><svg class="ic"><use href="#i-spark"/></svg></span><span><dt data-i18n="s10.k4">Belge</dt><dd data-i18n="s10.v4">Youthpass sertifikası</dd></span></div>
+          <div id="contact-row" hidden><span class="ib sm"><svg class="ic"><use href="#i-megaphone"/></svg></span><span><dt data-i18n="s10.k5">İletişim</dt><dd><a id="contact-mail" href="#"></a></dd></span></div>
+          <div id="social-row" hidden><span class="ib sm leaf"><svg class="ic"><use href="#i-camera"/></svg></span><span><dt data-i18n="s10.k6">Takip et</dt><dd id="social-links"></dd></span></div>
+        </dl>
+      </div>
+    </div>
+  </section>
 
-        function updateActiveButton() {
-            const trBtn = document.getElementById('lang-tr');
-            const enBtn = document.getElementById('lang-en');
-            const mobileDisplay = document.getElementById('mobile-lang-display');
-            
-            if (currentLang === 'tr') {
-                trBtn.classList.add('active');
-                enBtn.classList.remove('active');
-                if (mobileDisplay) mobileDisplay.textContent = '🇹🇷 TR';
-            } else {
-                enBtn.classList.add('active');
-                trBtn.classList.remove('active');
-                if (mobileDisplay) mobileDisplay.textContent = '🇬🇧 EN';
-            }
-        }
+</main>
 
-        function applyLanguage() {
-            // Update all elements with data-tr and data-en attributes
-            document.querySelectorAll('[data-tr][data-en]').forEach(el => {
-                if (el.tagName === 'INPUT' && el.hasAttribute('data-placeholder-tr')) {
-                    el.placeholder = currentLang === 'tr' ? el.getAttribute('data-placeholder-tr') : el.getAttribute('data-placeholder-en');
-                } else {
-                    el.textContent = currentLang === 'tr' ? el.getAttribute('data-tr') : el.getAttribute('data-en');
-                }
-            });
-            
-            // Update HTML lang attribute
-            document.documentElement.lang = currentLang;
-            
-            // Update meta description
-            const metaDesc = document.querySelector('meta[name="description"]');
-            if (currentLang === 'en') {
-                metaDesc.content = "Sustainable living and beeswax workshops in Gaziantep. 40% plastic reduction goal. ESC30 Solidarity Project.";
-            } else {
-                metaDesc.content = "Gaziantep'te sürdürülebilir yaşam ve balmumu kumaş atölyeleri. Plastik atığı %40 azaltma hedefiyle yerel dayanışma projesi.";
-            }
-        }
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="./">
+          <svg aria-hidden="true"><use href="#seal"/></svg>
+          <span class="brand-name">Bee The Change<small>Seal The Future</small></span>
+        </a>
+        <p data-i18n="f.about">Avrupa Dayanışma Programı (European Solidarity Corps) kapsamında Gaziantep için hazırlanmış bir dayanışma projesi. AB Yeşil Mutabakatı'nın yeşil dönüşüm vizyonuna yerel ölçekte katkı sunmayı amaçlar.</p>
+      </div>
+      <div>
+        <h4 data-i18n="f.site">Proje</h4>
+        <ul>
+          <li><a href="#yaklasim" data-i18n="nav.approach">Yaklaşım</a></li>
+          <li><a href="#hedefler" data-i18n="nav.goals">Hedefler</a></li>
+          <li><a href="#takvim" data-i18n="nav.timeline">Takvim</a></li>
+          <li><a href="#etkinlikler" data-i18n="nav.events">Etkinlikler</a></li>
+          <li><a href="#etki" data-i18n="nav.impact">Etki ve kalıcılık</a></li>
+          <li><a href="#ekip" data-i18n="nav.team">Ekip</a></li>
+          <li><a href="#katil" data-i18n="nav.join">Katıl</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="nav.toolkit">Dijital Toolkit</h4>
+        <ul>
+          <li><a href="toolkit.html#balmumu-kumas" data-i18n="tk.n1">Balmumu kumaş rehberi</a></li>
+          <li><a href="toolkit.html#petekten-balmumu" data-i18n="tk.n2">Petekten balmumu</a></li>
+          <li><a href="toolkit.html#takip-formu" data-i18n="tk.n3">7 günlük takip formu</a></li>
+          <li><a href="toolkit.html#bilgi-testi" data-i18n="tk.n4">Bilgi testi</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-note" data-i18n="f.note">Bu site, Avrupa Dayanışma Programı Dayanışma Projesi (ESC30) başvurusu kapsamında hazırlanmıştır. Takvimde yer alan faaliyetler planlanan faaliyetlerdir.</p>
+    <div class="foot-bottom">
+      <span>© 2026 Bee The Change, Seal The Future</span>
+      <span>European Solidarity Corps · Youthpass</span>
+    </div>
+  </div>
+</footer>
 
-        // Initialize language
-        document.addEventListener('DOMContentLoaded', () => {
-            applyLanguage();
-            updateActiveButton();
-        });
-
-        // Scroll Progress Bar
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById("progressBar").style.width = scrolled + "%";
-            
-            const navbar = document.getElementById('navbar');
-            if (winScroll > 50) {
-                navbar.classList.add('shadow-md');
-            } else {
-                navbar.classList.remove('shadow-md');
-            }
-
-            const sections = document.querySelectorAll('.section-hidden');
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 100) {
-                    section.classList.add('section-visible');
-                }
-            });
-
-            const impactSection = document.getElementById('impact');
-            const rect = impactSection.getBoundingClientRect();
-            if (rect.top < window.innerHeight && !impactSection.classList.contains('counted')) {
-                impactSection.classList.add('counted');
-                animateCounters();
-            }
-        });
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const icon = document.getElementById('menuIcon');
-            
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                menu.classList.add('hidden');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        }
-
-        function openModal() {
-            const modal = document.getElementById('registrationModal');
-            const content = document.getElementById('modalContent');
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                content.classList.remove('scale-95', 'opacity-0');
-                content.classList.add('scale-100', 'opacity-100');
-            }, 10);
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('registrationModal');
-            const content = document.getElementById('modalContent');
-            content.classList.remove('scale-100', 'opacity-100');
-            content.classList.add('scale-95', 'opacity-0');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
-            document.body.style.overflow = 'auto';
-        }
-
-        function handleSubmit(e) {
-            e.preventDefault();
-            closeModal();
-            const toast = document.getElementById('successToast');
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            
-            setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 4000);
-            e.target.reset();
-        }
-
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const duration = 2000;
-                const increment = target / (duration / 16);
-                
-                let current = 0;
-                const updateCounter = () => {
-                    current += increment;
-                    if (current < target) {
-                        counter.innerText = Math.ceil(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-                updateCounter();
-            });
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Roadmap Show More / Collapse
-        function toggleRemainingMonths() {
-            const container = document.getElementById('remainingMonths');
-            const icon = document.getElementById('showMoreIcon');
-            const text = document.getElementById('showMoreText');
-            const sub = document.getElementById('showMoreSub');
-            const isHidden = container.classList.contains('hidden');
-
-            if (isHidden) {
-                container.classList.remove('hidden');
-                container.style.opacity = '0';
-                container.style.maxHeight = '0';
-                container.style.overflow = 'hidden';
-                container.style.transition = 'opacity 0.5s ease, max-height 0.6s ease';
-                requestAnimationFrame(() => {
-                    container.style.opacity = '1';
-                    container.style.maxHeight = container.scrollHeight + 'px';
-                });
-                setTimeout(() => { container.style.maxHeight = 'none'; container.style.overflow = ''; }, 700);
-                icon.style.transform = 'rotate(180deg)';
-                text.textContent = currentLang === 'tr' ? 'Gizle' : 'Show Less';
-                sub.textContent = currentLang === 'tr' ? 'Ay 6 – 12 planını gizle' : 'Hide months 6 – 12';
-            } else {
-                container.style.maxHeight = container.scrollHeight + 'px';
-                container.style.overflow = 'hidden';
-                container.style.transition = 'opacity 0.4s ease, max-height 0.5s ease';
-                requestAnimationFrame(() => {
-                    container.style.opacity = '0';
-                    container.style.maxHeight = '0';
-                });
-                setTimeout(() => { container.classList.add('hidden'); container.style.overflow = ''; }, 500);
-                icon.style.transform = 'rotate(0deg)';
-                text.textContent = currentLang === 'tr' ? 'Devamını Gör' : 'Show More';
-                sub.textContent = currentLang === 'tr' ? 'Ay 6 – 12 arası planı görüntüle' : 'View months 6 – 12';
-                // Scroll back to button
-                document.getElementById('showMoreBtnWrapper').scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }
-
-        // Roadmap Phase Filter
-        function filterPhase(phase) {
-            const items = document.querySelectorAll('.timeline-item');
-            const phaseDividers = document.querySelectorAll('#timelineContainer > .relative.my-8, #remainingMonths > .relative.my-8');
-            const remaining = document.getElementById('remainingMonths');
-            const btnWrapper = document.getElementById('showMoreBtnWrapper');
-            const icon = document.getElementById('showMoreIcon');
-            const text = document.getElementById('showMoreText');
-            const sub = document.getElementById('showMoreSub');
-
-            // If filtering a specific phase, show all months (expand hidden)
-            if (phase !== 'all') {
-                remaining.classList.remove('hidden');
-                remaining.style.opacity = '1';
-                remaining.style.maxHeight = 'none';
-                remaining.style.overflow = '';
-                btnWrapper.style.display = 'none';
-            } else {
-                // On "All", collapse back and show button
-                remaining.classList.add('hidden');
-                remaining.style.opacity = '';
-                remaining.style.maxHeight = '';
-                btnWrapper.style.display = '';
-                icon.style.transform = 'rotate(0deg)';
-                text.textContent = currentLang === 'tr' ? 'Devamını Gör' : 'Show More';
-                sub.textContent = currentLang === 'tr' ? 'Ay 6 – 12 arası planı görüntüle' : 'View months 6 – 12';
-            }
-            
-            items.forEach(item => {
-                if (phase === 'all' || item.getAttribute('data-phase') === phase) {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-
-            phaseDividers.forEach(d => {
-                d.style.display = phase === 'all' ? '' : 'none';
-            });
-
-            document.querySelectorAll('.phase-btn').forEach(btn => {
-                btn.classList.remove('bg-primary-500', 'bg-nature-500', 'text-white', 'shadow-lg');
-                btn.classList.add('bg-white');
-                const hasTr = btn.getAttribute('data-tr') || '';
-                if (hasTr.includes('Uygulama') || hasTr.includes('Yaygınlaştırma')) {
-                    btn.classList.add('text-nature-700');
-                } else {
-                    btn.classList.add('text-primary-700');
-                }
-            });
-        }
-
-        document.querySelectorAll('.phase-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.phase-btn').forEach(b => {
-                    b.classList.remove('bg-primary-500', 'bg-nature-500', 'text-white', 'shadow-lg');
-                    b.classList.add('bg-white');
-                });
-                this.classList.add('shadow-lg');
-                const txt = this.textContent.trim();
-                if (txt.includes('Implementation') || txt.includes('Uygulama') || txt.includes('Dissemination') || txt.includes('Yaygınlaştırma')) {
-                    this.classList.add('bg-nature-500', 'text-white');
-                    this.classList.remove('bg-white', 'text-nature-700');
-                } else {
-                    this.classList.add('bg-primary-500', 'text-white');
-                    this.classList.remove('bg-white', 'text-primary-700');
-                }
-            });
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            // Ensure first phase button is styled as active
-            const firstBtn = document.querySelector('.phase-btn');
-            if (firstBtn) {
-                firstBtn.classList.add('bg-primary-500', 'text-white', 'shadow-lg');
-                firstBtn.classList.remove('bg-white', 'text-primary-700');
-            }
-        });
-    </script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/i18n-en.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
